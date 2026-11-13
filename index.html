@@ -1,1197 +1,1188 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Dao Ngoc Nhu Y | Data Analytics & Business Intelligence</title>
-
-    <meta name="description"
-        content="Portfolio of Dao Ngoc Nhu Y — Data Analytics, Business Intelligence, Business Analysis and Consulting.">
-
-    <style>
-
-        /* =========================================================
-           GLOBAL
-        ========================================================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dao Ngoc Nhu Y | Data Analytics & Business Intelligence</title>
+
+<meta name="description"
+content="Portfolio of Dao Ngoc Nhu Y — Data Analytics, Business Intelligence, Business Analysis and Consulting.">
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Roboto,
-                Helvetica,
-                Arial,
-                sans-serif;
-
-            background: #ffffff;
-            color: #111827;
-            line-height: 1.6;
-        }
+    background: #ffffff;
+    color: #111827;
+    line-height: 1.6;
+}
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-        .container {
-            width: min(1280px, 90%);
-            margin: 0 auto;
-        }
+img {
+    max-width: 100%;
+}
 
+.container {
+    width: min(1280px, 90%);
+    margin: 0 auto;
+}
 
-        /* =========================================================
-           NAVIGATION
-        ========================================================= */
+section {
+    scroll-margin-top: 80px;
+}
 
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
 
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(16px);
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid #eef0f3;
+}
+
+.nav-container {
+    width: min(1280px, 90%);
+    margin: auto;
+
+    min-height: 72px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-            border-bottom: 1px solid #eef0f3;
-        }
+.logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
 
-        .nav-container {
-            width: min(1280px, 90%);
-            margin: auto;
+.logo span {
+    color: #64748b;
+}
 
-            min-height: 72px;
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.nav-links a {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+    transition: color 0.25s ease;
+}
 
-        .logo {
-            font-size: 18px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
+.nav-links a:hover {
+    color: #111827;
+}
 
-        .logo span {
-            color: #64748b;
-        }
 
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
+/* =========================================================
+   HERO / COVER
+========================================================= */
 
-        .nav-links a {
-            font-size: 13px;
-            font-weight: 600;
-            color: #64748b;
+.hero {
+    min-height: 760px;
 
-            transition: color 0.25s ease;
-        }
+    position: relative;
 
-        .nav-links a:hover {
-            color: #111827;
-        }
+    display: flex;
+    align-items: flex-end;
 
+    overflow: hidden;
 
-        /* =========================================================
-           HERO
-        ========================================================= */
+    color: white;
+}
 
-        .hero {
-            min-height: 760px;
+/* Cover image */
 
-            display: flex;
-            align-items: center;
+.hero-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
 
-            position: relative;
-            overflow: hidden;
+.hero-image img {
+    width: 100%;
+    height: 100%;
 
-            background:
-                linear-gradient(
-                    120deg,
-                    rgba(248, 250, 252, 1) 0%,
-                    rgba(255, 255, 255, 1) 55%,
-                    rgba(241, 245, 249, 1) 100%
-                );
-        }
+    object-fit: cover;
 
-        .hero::after {
-            content: "";
-            position: absolute;
+    /*
+       Change this if you want to move
+       the photo focus point.
+    */
+    object-position: center 40%;
+}
 
-            width: 500px;
-            height: 500px;
+/* Dark gradient over image */
 
-            border-radius: 50%;
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
 
-            background: rgba(148, 163, 184, 0.10);
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10,15,25,0.82) 0%,
+            rgba(10,15,25,0.52) 42%,
+            rgba(10,15,25,0.16) 72%,
+            rgba(10,15,25,0.08) 100%
+        );
+}
 
-            right: -180px;
-            top: -160px;
+.hero-content {
+    position: relative;
+    z-index: 2;
 
-            pointer-events: none;
-        }
+    width: min(1280px, 90%);
+    margin: 0 auto;
 
-        .hero-container {
-            width: min(1280px, 90%);
-            margin: auto;
+    padding: 120px 0 90px;
+}
 
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
+.hero-label {
+    font-size: 12px;
+    font-weight: 800;
 
-            gap: 80px;
+    letter-spacing: 4px;
 
-            align-items: center;
+    color: rgba(255,255,255,0.72);
 
-            position: relative;
-            z-index: 2;
-        }
+    margin-bottom: 25px;
+}
 
-        .hero-label {
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: 4px;
+.hero h1 {
+    max-width: 850px;
 
-            color: #64748b;
+    font-size: clamp(50px, 7vw, 90px);
 
-            margin-bottom: 25px;
-        }
+    line-height: 0.98;
 
-        .hero h1 {
-            font-size: clamp(48px, 7vw, 88px);
+    letter-spacing: -5px;
 
-            line-height: 0.98;
+    margin-bottom: 30px;
+}
 
-            letter-spacing: -5px;
+.hero h1 span {
+    display: block;
+    color: rgba(255,255,255,0.68);
+}
 
-            margin-bottom: 28px;
-        }
+.hero-subtitle {
+    max-width: 680px;
 
-        .hero h1 span {
-            color: #64748b;
-        }
+    font-size: 19px;
 
-        .hero-subtitle {
-            max-width: 700px;
+    line-height: 1.7;
 
-            font-size: 20px;
-            line-height: 1.65;
+    color: rgba(255,255,255,0.84);
 
-            color: #64748b;
+    margin-bottom: 38px;
+}
 
-            margin-bottom: 38px;
-        }
+.hero-subtitle strong {
+    color: white;
+}
 
-        .hero-subtitle strong {
-            color: #1f2937;
-        }
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
 
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
+.btn {
+    display: inline-flex;
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
 
-            padding: 13px 20px;
+    padding: 13px 20px;
 
-            border-radius: 999px;
+    border-radius: 999px;
 
-            font-size: 13px;
-            font-weight: 700;
+    font-size: 13px;
+    font-weight: 700;
 
-            border: 1px solid #e2e8f0;
+    border: 1px solid rgba(255,255,255,0.25);
 
-            transition:
-                transform 0.25s ease,
-                background 0.25s ease,
-                box-shadow 0.25s ease;
-        }
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
 
-        .btn:hover {
-            transform: translateY(-2px);
-        }
+.btn:hover {
+    transform: translateY(-2px);
+}
 
-        .btn-primary {
-            background: #111827;
-            color: white;
-            border-color: #111827;
+.btn-primary {
+    background: white;
+    color: #111827;
+    border-color: white;
 
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
-        }
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.18);
+}
 
-        .btn-secondary {
-            background: white;
-            color: #334155;
-        }
+.btn-secondary {
+    background: rgba(255,255,255,0.08);
+    color: white;
 
-        .btn-secondary:hover {
-            background: #f8fafc;
-        }
+    backdrop-filter: blur(10px);
+}
 
-        /* Hero visual */
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.16);
+}
 
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-        }
 
-        .hero-card {
-            width: 390px;
-            height: 500px;
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
 
-            border-radius: 32px;
+.section {
+    padding: 110px 0;
+}
 
-            overflow: hidden;
+.section-label {
+    font-size: 12px;
 
-            position: relative;
+    font-weight: 800;
 
-            background:
-                linear-gradient(
-                    145deg,
-                    #dbeafe,
-                    #f8fafc 45%,
-                    #cbd5e1
-                );
+    letter-spacing: 4px;
 
-            box-shadow:
-                0 35px 90px rgba(15, 23, 42, 0.14);
+    color: #64748b;
 
-            transform: rotate(2deg);
-        }
+    margin-bottom: 18px;
+}
 
-        .hero-card-inner {
-            position: absolute;
-            inset: 20px;
+.section-title {
+    font-size: clamp(38px, 5vw, 62px);
 
-            border: 1px solid rgba(255,255,255,0.7);
+    letter-spacing: -3px;
 
-            border-radius: 24px;
+    line-height: 1.05;
 
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
+    margin-bottom: 20px;
+}
 
-            padding: 28px;
+.section-description {
+    color: #64748b;
 
-            background:
-                linear-gradient(
-                    to bottom,
-                    rgba(255,255,255,0.02),
-                    rgba(15,23,42,0.12)
-                );
-        }
+    font-size: 17px;
 
-        .hero-card-title {
-            color: white;
-            font-size: 30px;
-            font-weight: 800;
-            line-height: 1.05;
-        }
+    max-width: 800px;
 
-        .hero-card-text {
-            color: rgba(255,255,255,0.85);
-            font-size: 13px;
-            margin-top: 10px;
-        }
+    line-height: 1.7;
+}
 
-        .hero-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            inset: 0;
-            opacity: 0.75;
-        }
 
-        .hero-card-inner {
-            z-index: 2;
-        }
+/* =========================================================
+   PROJECTS
+========================================================= */
 
+.projects-section {
+    background: #f8fafc;
+}
 
-        /* =========================================================
-           SECTION GENERAL
-        ========================================================= */
+.projects-header {
+    margin-bottom: 55px;
+}
 
-        section {
-            scroll-margin-top: 90px;
-        }
+.projects-grid {
+    display: grid;
 
-        .section {
-            padding: 110px 0;
-        }
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
 
-        .section-label {
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 4px;
-            color: #64748b;
-            margin-bottom: 18px;
-        }
+    gap: 18px;
 
-        .section-title {
-            font-size: clamp(38px, 5vw, 62px);
-            letter-spacing: -3px;
-            line-height: 1.05;
-            margin-bottom: 20px;
-        }
+    align-items: start;
+}
 
-        .section-description {
-            color: #64748b;
-            font-size: 17px;
-            max-width: 800px;
-            line-height: 1.7;
-        }
+.project-card {
+    background: white;
 
+    border: 1px solid #e5e7eb;
 
-        /* =========================================================
-           PROJECTS
-        ========================================================= */
+    border-radius: 22px;
 
-        .projects-section {
-            background: #f8fafc;
-        }
+    overflow: hidden;
 
-        .projects-header {
-            margin-bottom: 55px;
-        }
+    display: flex;
+    flex-direction: column;
 
-        .projects-grid {
+    min-width: 0;
 
-            display: grid;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
 
-            grid-template-columns:
-                repeat(4, minmax(0, 1fr));
+.project-card:hover {
+    transform: translateY(-5px);
 
-            gap: 18px;
+    box-shadow:
+        0 25px 60px rgba(15,23,42,0.09);
+}
 
-            align-items: start;
-        }
+.project-main {
+    padding: 28px;
+}
 
-        .project-card {
+.project-number {
+    font-size: 12px;
 
-            background: white;
+    font-weight: 800;
 
-            border: 1px solid #e5e7eb;
+    letter-spacing: 3px;
 
-            border-radius: 22px;
+    color: #94a3b8;
 
-            overflow: hidden;
+    display: flex;
 
-            display: flex;
-            flex-direction: column;
+    justify-content: space-between;
 
-            min-width: 0;
+    align-items: center;
 
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-        }
+    margin-bottom: 22px;
+}
 
-        .project-card:hover {
-            transform: translateY(-5px);
+.status {
+    display: inline-block;
 
-            box-shadow:
-                0 25px 60px rgba(15, 23, 42, 0.09);
-        }
+    padding: 6px 10px;
 
-        .project-main {
-            padding: 28px;
-        }
+    border-radius: 999px;
 
-        .project-number {
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 3px;
-            color: #94a3b8;
+    background: #f1f5f9;
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+    color: #475569;
 
-            margin-bottom: 22px;
-        }
+    font-size: 10px;
 
-        .status {
-            display: inline-block;
+    letter-spacing: 2px;
+}
 
-            padding: 6px 10px;
+.project-card h3 {
+    font-size: 23px;
 
-            border-radius: 999px;
+    line-height: 1.15;
 
-            background: #f1f5f9;
+    letter-spacing: -0.8px;
 
-            color: #475569;
+    margin-bottom: 16px;
+}
 
-            font-size: 10px;
-            letter-spacing: 2px;
-        }
+.project-purpose {
+    color: #64748b;
 
-        .project-card h3 {
-            font-size: 23px;
-            line-height: 1.15;
+    font-size: 14px;
 
-            letter-spacing: -0.8px;
+    line-height: 1.7;
 
-            margin-bottom: 16px;
-        }
+    min-height: 95px;
+}
 
-        .project-purpose {
-            color: #64748b;
+.tools {
+    display: flex;
 
-            font-size: 14px;
+    flex-wrap: wrap;
 
-            line-height: 1.7;
+    gap: 7px;
 
-            min-height: 95px;
-        }
+    margin-top: 20px;
+}
 
-        .tools {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 7px;
+.tool {
+    padding: 6px 9px;
 
-            margin-top: 20px;
-        }
+    background: #f1f5f9;
 
-        .tool {
-            padding: 6px 9px;
+    border-radius: 6px;
 
-            background: #f1f5f9;
+    color: #475569;
 
-            border-radius: 6px;
+    font-size: 10px;
 
-            color: #475569;
+    font-weight: 700;
+}
 
-            font-size: 10px;
-            font-weight: 700;
-        }
 
-        .project-details {
-            max-height: 0;
+/* Project expandable details */
 
-            overflow: hidden;
+.project-details {
+    max-height: 0;
 
-            transition:
-                max-height 0.5s ease,
-                padding 0.4s ease;
+    overflow: hidden;
 
-            border-top: 1px solid transparent;
-        }
+    transition:
+        max-height 0.5s ease,
+        padding 0.4s ease;
 
-        .project-card.expanded .project-details {
-            max-height: 1000px;
+    border-top: 1px solid transparent;
+}
 
-            padding: 24px 28px 30px;
+.project-card.expanded .project-details {
+    max-height: 1000px;
 
-            border-top-color: #eef2f7;
-        }
+    padding: 24px 28px 30px;
 
-        .detail-block {
-            margin-bottom: 20px;
-        }
+    border-top-color: #eef2f7;
+}
 
-        .detail-block:last-child {
-            margin-bottom: 0;
-        }
+.detail-block {
+    margin-bottom: 20px;
+}
 
-        .detail-block h4 {
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+.detail-block:last-child {
+    margin-bottom: 0;
+}
 
-            color: #475569;
+.detail-block h4 {
+    font-size: 11px;
 
-            margin-bottom: 7px;
-        }
+    letter-spacing: 2px;
 
-        .detail-block p,
-        .detail-block li {
-            color: #64748b;
-            font-size: 13px;
-            line-height: 1.7;
-        }
+    text-transform: uppercase;
 
-        .detail-block ul {
-            padding-left: 18px;
-        }
+    color: #475569;
 
-        .project-toggle {
-            width: 100%;
+    margin-bottom: 7px;
+}
 
-            border: 0;
-            border-top: 1px solid #eef2f7;
+.detail-block p,
+.detail-block li {
+    color: #64748b;
 
-            background: white;
+    font-size: 13px;
 
-            padding: 18px 28px;
+    line-height: 1.7;
+}
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+.detail-block ul {
+    padding-left: 18px;
+}
 
-            cursor: pointer;
+.project-toggle {
+    width: 100%;
 
-            font-family: inherit;
+    border: 0;
 
-            color: #334155;
+    border-top: 1px solid #eef2f7;
 
-            font-size: 12px;
-            font-weight: 800;
+    background: white;
 
-            letter-spacing: 0.5px;
-        }
+    padding: 18px 28px;
 
-        .project-toggle:hover {
-            background: #f8fafc;
-        }
+    display: flex;
 
-        .plus {
-            font-size: 22px;
-            font-weight: 300;
+    justify-content: space-between;
 
-            transition: transform 0.3s ease;
-        }
+    align-items: center;
 
-        .project-card.expanded .plus {
-            transform: rotate(45deg);
-        }
+    cursor: pointer;
 
+    font-family: inherit;
 
-        /* =========================================================
-           EXPERIENCE
-        ========================================================= */
+    color: #334155;
 
-        .experience-section {
-            background: white;
-        }
+    font-size: 12px;
 
-        .experience-list {
-            margin-top: 55px;
-        }
+    font-weight: 800;
 
-        .experience-item {
-            display: grid;
+    letter-spacing: 0.5px;
+}
 
-            grid-template-columns: 220px 1fr;
+.project-toggle:hover {
+    background: #f8fafc;
+}
 
-            gap: 50px;
+.plus {
+    font-size: 22px;
 
-            padding: 38px 0;
+    font-weight: 300;
 
-            border-top: 1px solid #e5e7eb;
-        }
+    transition: transform 0.3s ease;
+}
 
-        .experience-item:last-child {
-            border-bottom: 1px solid #e5e7eb;
-        }
+.project-card.expanded .plus {
+    transform: rotate(45deg);
+}
 
-        .experience-date {
-            color: #64748b;
 
-            font-size: 12px;
+/* =========================================================
+   EXPERIENCE
+========================================================= */
 
-            font-weight: 700;
+.experience-section {
+    background: white;
+}
 
-            line-height: 1.6;
-        }
+.experience-list {
+    margin-top: 55px;
+}
 
-        .experience-company {
-            color: #94a3b8;
+.experience-item {
+    display: grid;
 
-            font-size: 12px;
+    grid-template-columns: 220px 1fr;
 
-            margin-top: 7px;
-        }
+    gap: 50px;
 
-        .experience-content h3 {
-            font-size: 23px;
+    padding: 38px 0;
 
-            letter-spacing: -0.5px;
+    border-top: 1px solid #e5e7eb;
+}
 
-            margin-bottom: 6px;
-        }
+.experience-item:last-child {
+    border-bottom: 1px solid #e5e7eb;
+}
 
-        .experience-content h4 {
-            font-size: 13px;
+.experience-date {
+    color: #64748b;
 
-            color: #64748b;
+    font-size: 12px;
 
-            font-weight: 600;
+    font-weight: 700;
 
-            margin-bottom: 18px;
-        }
+    line-height: 1.6;
+}
 
-        .experience-content ul {
-            padding-left: 18px;
-        }
+.experience-company {
+    color: #94a3b8;
 
-        .experience-content li {
-            color: #64748b;
+    font-size: 12px;
 
-            font-size: 14px;
+    margin-top: 7px;
+}
 
-            line-height: 1.75;
+.experience-content h3 {
+    font-size: 23px;
 
-            margin-bottom: 7px;
-        }
+    letter-spacing: -0.5px;
 
+    margin-bottom: 6px;
+}
 
-        /* =========================================================
-           ABOUT
-        ========================================================= */
+.experience-content h4 {
+    font-size: 13px;
 
-        .about-section {
-            background: #f8fafc;
-            padding: 120px 0;
-        }
+    color: #64748b;
 
-        .about-container {
-            width: min(1280px, 90%);
-            margin: auto;
+    font-weight: 600;
 
-            display: grid;
+    margin-bottom: 18px;
+}
 
-            grid-template-columns:
-                1.15fr 0.85fr;
+.experience-content ul {
+    padding-left: 18px;
+}
 
-            gap: 90px;
+.experience-content li {
+    color: #64748b;
 
-            align-items: center;
-        }
+    font-size: 14px;
 
-        .about-text {
-            max-width: 700px;
-        }
+    line-height: 1.75;
 
-        .about-text h2 {
-            font-size: clamp(38px, 5vw, 62px);
+    margin-bottom: 7px;
+}
 
-            line-height: 1.03;
 
-            letter-spacing: -3px;
+/* =========================================================
+   ABOUT
+========================================================= */
 
-            margin-bottom: 30px;
-        }
+.about-section {
+    padding: 120px 0;
 
-        .about-intro {
-            font-size: 18px;
+    background: #f8fafc;
+}
 
-            color: #374151;
+.about-container {
+    width: min(1280px, 90%);
 
-            line-height: 1.8;
+    margin: auto;
 
-            margin-bottom: 24px;
-        }
+    display: grid;
 
-        .about-text p:not(.about-intro) {
-            font-size: 15px;
+    grid-template-columns:
+        0.9fr 1.1fr;
 
-            color: #64748b;
+    gap: 90px;
 
-            line-height: 1.85;
+    align-items: center;
+}
 
-            margin-bottom: 20px;
-        }
 
-        .about-text strong {
-            color: #1f2937;
-        }
+/* About image */
 
-        .about-interests {
-            display: flex;
+.about-image {
+    width: 100%;
 
-            flex-wrap: wrap;
+    max-width: 430px;
 
-            gap: 9px;
+    margin: 0 auto;
+}
 
-            margin-top: 28px;
-        }
+.about-image img {
+    display: block;
 
-        .about-interests span {
-            padding: 9px 14px;
+    width: 100%;
 
-            background: white;
+    aspect-ratio: 4 / 5;
 
-            border: 1px solid #e2e8f0;
+    object-fit: cover;
 
-            border-radius: 999px;
+    border-radius: 28px;
 
-            font-size: 12px;
+    box-shadow:
+        0 30px 80px rgba(15,23,42,0.13);
 
-            font-weight: 700;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
 
-            color: #475569;
-        }
+.about-image img:hover {
+    transform: translateY(-5px);
 
-        .about-image-frame {
-            width: 100%;
-            max-width: 470px;
+    box-shadow:
+        0 40px 90px rgba(15,23,42,0.18);
+}
 
-            margin-left: auto;
 
-            border-radius: 30px;
+/* About content */
 
-            overflow: hidden;
+.about-content {
+    max-width: 680px;
+}
 
-            box-shadow:
-                0 35px 90px rgba(15, 23, 42, 0.15);
+.about-content h2 {
+    font-size: clamp(38px, 5vw, 62px);
 
-            transform: rotate(1.2deg);
+    line-height: 1.03;
 
-            transition:
-                transform 0.35s ease,
-                box-shadow 0.35s ease;
-        }
+    letter-spacing: -3px;
 
-        .about-image-frame:hover {
-            transform: rotate(0deg) translateY(-5px);
+    margin-bottom: 30px;
+}
 
-            box-shadow:
-                0 45px 100px rgba(15, 23, 42, 0.18);
-        }
+.about-content p {
+    font-size: 16px;
 
-        .about-image {
-            display: block;
+    color: #64748b;
 
-            width: 100%;
+    line-height: 1.85;
 
-            height: auto;
+    margin-bottom: 20px;
+}
 
-            object-fit: cover;
-        }
+.about-content .about-lead {
+    font-size: 18px;
 
-        .about-image-caption {
-            max-width: 470px;
+    color: #374151;
 
-            margin: 20px 0 0 auto;
+    line-height: 1.75;
+}
 
-            display: flex;
+.about-content strong {
+    color: #1f2937;
+}
 
-            justify-content: space-between;
 
-            gap: 20px;
+/* About interests */
 
-            font-size: 10px;
+.about-interests {
+    display: flex;
 
-            text-transform: uppercase;
+    flex-wrap: wrap;
 
-            letter-spacing: 1.2px;
+    gap: 12px;
 
-            color: #94a3b8;
-        }
+    margin-top: 32px;
+}
 
+.interest {
+    display: flex;
 
-        /* =========================================================
-           EDUCATION
-        ========================================================= */
+    align-items: center;
 
-        .education-section {
-            background: white;
-        }
+    gap: 12px;
 
-        .education-list {
-            margin-top: 50px;
-        }
+    padding: 14px 17px;
 
-        .education-item {
-            display: grid;
+    background: white;
 
-            grid-template-columns: 200px 1fr;
+    border: 1px solid #e5e7eb;
 
-            gap: 40px;
+    border-radius: 16px;
+}
 
-            padding: 30px 0;
+.interest-icon {
+    font-size: 21px;
+}
 
-            border-top: 1px solid #e5e7eb;
-        }
+.interest strong {
+    display: block;
 
-        .education-item:last-child {
-            border-bottom: 1px solid #e5e7eb;
-        }
+    color: #111827;
 
-        .education-date {
-            font-size: 12px;
+    font-size: 13px;
+}
 
-            font-weight: 700;
+.interest small {
+    display: block;
 
-            color: #64748b;
-        }
+    color: #94a3b8;
 
-        .education-content h3 {
-            font-size: 19px;
+    font-size: 11px;
 
-            letter-spacing: -0.3px;
+    margin-top: 2px;
+}
 
-            margin-bottom: 5px;
-        }
 
-        .education-content h4 {
-            font-size: 13px;
+/* =========================================================
+   EDUCATION
+========================================================= */
 
-            font-weight: 600;
+.education-section {
+    background: white;
+}
 
-            color: #64748b;
+.education-list {
+    margin-top: 50px;
+}
 
-            margin-bottom: 7px;
-        }
+.education-item {
+    display: grid;
 
-        .education-content p {
-            color: #94a3b8;
+    grid-template-columns: 200px 1fr;
 
-            font-size: 12px;
-        }
+    gap: 40px;
 
+    padding: 32px 0;
 
-        /* =========================================================
-           SKILLS
-        ========================================================= */
+    border-top: 1px solid #e5e7eb;
+}
 
-        .skills-section {
-            background: #f8fafc;
-        }
+.education-item:last-child {
+    border-bottom: 1px solid #e5e7eb;
+}
 
-        .skills-grid {
-            display: grid;
+.education-date {
+    font-size: 12px;
 
-            grid-template-columns:
-                repeat(3, 1fr);
+    font-weight: 700;
 
-            gap: 20px;
+    color: #64748b;
+}
 
-            margin-top: 55px;
-        }
+.education-content h3 {
+    font-size: 20px;
 
-        .skill-card {
-            background: white;
+    letter-spacing: -0.3px;
 
-            border: 1px solid #e5e7eb;
+    margin-bottom: 5px;
+}
 
-            border-radius: 20px;
+.education-content h4 {
+    font-size: 13px;
 
-            padding: 30px;
-        }
+    font-weight: 600;
 
-        .skill-card h3 {
-            font-size: 14px;
+    color: #64748b;
 
-            letter-spacing: 1px;
+    margin-bottom: 7px;
+}
 
-            margin-bottom: 18px;
-        }
+.education-content p {
+    color: #94a3b8;
 
-        .skill-card p {
-            color: #64748b;
+    font-size: 12px;
+}
 
-            font-size: 14px;
 
-            line-height: 1.9;
-        }
+/* =========================================================
+   TECHNICAL SKILLS
+========================================================= */
 
+.skills-section {
+    background: #f8fafc;
+}
 
-        /* =========================================================
-           CERTIFICATIONS
-        ========================================================= */
+.skills-grid {
+    display: grid;
 
-        .cert-section {
-            background: white;
-        }
+    grid-template-columns:
+        repeat(3, 1fr);
 
-        .cert-box {
-            margin-top: 45px;
+    gap: 20px;
 
-            padding: 35px;
+    margin-top: 55px;
+}
 
-            border: 1px solid #e5e7eb;
+.skill-card {
+    background: white;
 
-            border-radius: 22px;
+    border: 1px solid #e5e7eb;
 
-            display: flex;
+    border-radius: 20px;
 
-            justify-content: space-between;
+    padding: 30px;
+}
 
-            align-items: center;
+.skill-card h3 {
+    font-size: 14px;
 
-            gap: 30px;
-        }
+    letter-spacing: 1px;
 
-        .cert-box h3 {
-            font-size: 22px;
+    margin-bottom: 18px;
+}
 
-            margin-bottom: 7px;
-        }
+.skill-card p {
+    color: #64748b;
 
-        .cert-box p {
-            color: #64748b;
+    font-size: 14px;
 
-            font-size: 14px;
-        }
+    line-height: 1.9;
+}
 
 
-        /* =========================================================
-           CONTACT
-        ========================================================= */
+/* =========================================================
+   CERTIFICATIONS
+========================================================= */
 
-        .contact-section {
-            background: #111827;
+.cert-section {
+    background: white;
+}
 
-            color: white;
+.cert-box {
+    margin-top: 45px;
 
-            padding: 120px 0;
-        }
+    padding: 35px;
 
-        .contact-section .section-label {
-            color: #94a3b8;
-        }
+    border: 1px solid #e5e7eb;
 
-        .contact-section .section-title {
-            color: white;
-        }
+    border-radius: 22px;
 
-        .contact-description {
-            color: #94a3b8;
+    display: flex;
 
-            font-size: 17px;
+    justify-content: space-between;
 
-            max-width: 650px;
+    align-items: center;
 
-            line-height: 1.8;
+    gap: 30px;
+}
 
-            margin-bottom: 35px;
-        }
+.cert-box h3 {
+    font-size: 22px;
 
-        .contact-links {
-            display: flex;
+    margin-bottom: 7px;
+}
 
-            flex-wrap: wrap;
+.cert-box p {
+    color: #64748b;
 
-            gap: 14px;
-        }
+    font-size: 14px;
+}
 
-        .contact-link {
-            border: 1px solid #334155;
 
-            border-radius: 999px;
+/* =========================================================
+   CONTACT
+========================================================= */
 
-            padding: 13px 19px;
+.contact-section {
+    background: #111827;
 
-            font-size: 13px;
+    color: white;
 
-            font-weight: 700;
+    padding: 120px 0;
+}
 
-            color: #e2e8f0;
+.contact-section .section-label {
+    color: #94a3b8;
+}
 
-            transition:
-                background 0.25s ease,
-                transform 0.25s ease;
-        }
+.contact-section .section-title {
+    color: white;
+}
 
-        .contact-link:hover {
-            background: #1e293b;
+.contact-description {
+    color: #94a3b8;
 
-            transform: translateY(-2px);
-        }
+    font-size: 17px;
 
+    max-width: 650px;
 
-        /* =========================================================
-           FOOTER
-        ========================================================= */
+    line-height: 1.8;
 
-        footer {
-            background: #111827;
+    margin-bottom: 35px;
+}
 
-            border-top: 1px solid #1e293b;
+.contact-links {
+    display: flex;
 
-            padding: 25px 0;
-        }
+    flex-wrap: wrap;
 
-        .footer-container {
-            width: min(1280px, 90%);
-            margin: auto;
+    gap: 14px;
+}
 
-            display: flex;
+.contact-link {
+    border: 1px solid #334155;
 
-            justify-content: space-between;
+    border-radius: 999px;
 
-            gap: 20px;
-        }
+    padding: 13px 19px;
 
-        footer p {
-            font-size: 11px;
+    font-size: 13px;
 
-            color: #64748b;
-        }
+    font-weight: 700;
 
+    color: #e2e8f0;
 
-        /* =========================================================
-           RESPONSIVE
-        ========================================================= */
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
 
-        @media (max-width: 1100px) {
+.contact-link:hover {
+    background: #1e293b;
 
-            .projects-grid {
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-            }
+    transform: translateY(-2px);
+}
 
-            .hero-container {
-                grid-template-columns: 1fr;
 
-                padding: 80px 0;
-            }
+/* =========================================================
+   FOOTER
+========================================================= */
 
-            .hero {
-                min-height: auto;
-            }
+footer {
+    background: #111827;
 
-            .hero-visual {
-                display: none;
-            }
+    border-top: 1px solid #1e293b;
 
-            .about-container {
-                grid-template-columns: 1fr;
+    padding: 25px 0;
+}
 
-                gap: 60px;
-            }
+.footer-container {
+    width: min(1280px, 90%);
 
-            .about-image-frame {
-                margin: 0 auto;
-            }
+    margin: auto;
 
-            .about-image-caption {
-                margin: 18px auto 0;
-            }
-        }
+    display: flex;
 
-        @media (max-width: 800px) {
+    justify-content: space-between;
 
-            .nav-links {
-                gap: 15px;
-            }
+    gap: 20px;
+}
 
-            .nav-links a:nth-child(2),
-            .nav-links a:nth-child(3) {
-                display: none;
-            }
+footer p {
+    font-size: 11px;
 
-            .hero h1 {
-                font-size: 56px;
+    color: #64748b;
+}
 
-                letter-spacing: -3px;
-            }
 
-            .experience-item {
-                grid-template-columns: 1fr;
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
-                gap: 10px;
-            }
+@media (max-width: 1100px) {
 
-            .education-item {
-                grid-template-columns: 1fr;
+    .projects-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
 
-                gap: 8px;
-            }
+    .about-container {
+        grid-template-columns: 1fr;
 
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
+        gap: 60px;
+    }
 
-            .cert-box {
-                flex-direction: column;
+    .about-image {
+        max-width: 470px;
+    }
 
-                align-items: flex-start;
-            }
-        }
+    .about-content {
+        max-width: 100%;
+    }
+}
 
-        @media (max-width: 600px) {
 
-            .container,
-            .nav-container,
-            .about-container,
-            .footer-container {
-                width: 88%;
-            }
+@media (max-width: 800px) {
 
-            .section {
-                padding: 80px 0;
-            }
+    .nav-links {
+        gap: 15px;
+    }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
+    .nav-links a:nth-child(2),
+    .nav-links a:nth-child(3) {
+        display: none;
+    }
 
-            .hero {
-                min-height: auto;
-            }
+    .hero {
+        min-height: 700px;
+    }
 
-            .hero-container {
-                width: 88%;
+    .hero-content {
+        padding: 80px 0 65px;
+    }
 
-                padding: 85px 0 100px;
-            }
+    .hero h1 {
+        font-size: 56px;
+        letter-spacing: -3px;
+    }
 
-            .hero h1 {
-                font-size: 48px;
-            }
+    .experience-item {
+        grid-template-columns: 1fr;
 
-            .hero-subtitle {
-                font-size: 17px;
-            }
+        gap: 10px;
+    }
 
-            .hero-buttons {
-                flex-direction: column;
+    .education-item {
+        grid-template-columns: 1fr;
 
-                align-items: stretch;
-            }
+        gap: 8px;
+    }
 
-            .btn {
-                width: 100%;
-            }
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 
-            .about-section {
-                padding: 85px 0;
-            }
+    .cert-box {
+        flex-direction: column;
 
-            .about-text h2 {
-                font-size: 43px;
+        align-items: flex-start;
+    }
+}
 
-                letter-spacing: -2px;
-            }
 
-            .about-image-frame {
-                border-radius: 22px;
-            }
+@media (max-width: 600px) {
 
-            .about-image-caption {
-                flex-direction: column;
+    .container,
+    .nav-container,
+    .about-container,
+    .footer-container {
+        width: 88%;
+    }
 
-                gap: 6px;
-            }
+    .section {
+        padding: 80px 0;
+    }
 
-            .footer-container {
-                flex-direction: column;
-            }
-        }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 
-    </style>
+    .hero {
+        min-height: 680px;
+    }
+
+    .hero-image img {
+        object-position: 58% center;
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(10,15,25,0.18) 0%,
+                rgba(10,15,25,0.60) 55%,
+                rgba(10,15,25,0.90) 100%
+            );
+    }
+
+    .hero-content {
+        width: 88%;
+
+        padding: 70px 0 55px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .about-section {
+        padding: 85px 0;
+    }
+
+    .about-content h2 {
+        font-size: 43px;
+
+        letter-spacing: -2px;
+    }
+
+    .about-image img {
+        border-radius: 22px;
+    }
+
+    .about-interests {
+        flex-direction: column;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+}
+
+</style>
 </head>
 
 
@@ -1241,87 +1232,96 @@
 
 
 <!-- =========================================================
-     HERO
+     HERO / COVER
 ========================================================= -->
 
 <section id="home" class="hero">
 
-    <div class="hero-container">
+    <!--
+        COVER IMAGE
+        Upload IMG_6351.jpg to the same folder as index.html
+    -->
 
-        <div>
+    <div class="hero-image">
 
-            <div class="hero-label">
-                DATA ANALYTICS · BUSINESS INTELLIGENCE · BUSINESS ANALYSIS
-            </div>
+        <img
+            src="IMG_6351.jpg"
+            alt="Dao Ngoc Nhu Y">
 
-            <h1>
-                From data<br>
-                to <span>business insight.</span>
-            </h1>
+    </div>
 
-            <p class="hero-subtitle">
 
-                I work at the intersection of
-                <strong>business, data and technology</strong>,
-                combining experience in consulting and business analysis
-                with hands-on data analytics and BI.
+    <div class="hero-overlay"></div>
 
-            </p>
 
-            <div class="hero-buttons">
+    <div class="hero-content">
 
-                <a href="#projects"
-                   class="btn btn-primary">
-                    Explore Projects →
-                </a>
-
-                <a href="https://www.linkedin.com/in/nhuydao/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="btn btn-secondary">
-                    LinkedIn ↗
-                </a>
-
-                <a href="https://drive.google.com/drive/folders/1w2tYbiAkgVddHKVHJ4f_7KIs2HQr_znW?usp=share_link"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="btn btn-secondary">
-                    Certificates ↗
-                </a>
-
-                <a href="#contact"
-                   class="btn btn-secondary">
-                    Contact
-                </a>
-
-            </div>
-
+        <div class="hero-label">
+            DATA ANALYTICS · BUSINESS INTELLIGENCE · CONSULTING
         </div>
 
 
-        <div class="hero-visual">
+        <h1>
 
-            <div class="hero-card">
+            From data<br>
 
-                <!-- Optional hero image -->
-                <img src="IMG_6351.jpg"
-                     alt="Portfolio visual">
+            <span>
+                to business insight.
+            </span>
 
-                <div class="hero-card-inner">
+        </h1>
 
-                    <div class="hero-card-title">
-                        Business.<br>
-                        Data.<br>
-                        Technology.
-                    </div>
 
-                    <div class="hero-card-text">
-                        Munich · Germany
-                    </div>
+        <p class="hero-subtitle">
 
-                </div>
+            I work at the intersection of
+            <strong>business, data and technology</strong>,
+            combining experience in consulting and business analysis
+            with hands-on data analytics and business intelligence.
 
-            </div>
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#projects"
+                class="btn btn-primary">
+
+                Explore Projects →
+
+            </a>
+
+
+            <a
+                href="https://www.linkedin.com/in/nhuydao/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary">
+
+                LinkedIn ↗
+
+            </a>
+
+
+            <a
+                href="https://drive.google.com/drive/folders/1w2tYbiAkgVddHKVHJ4f_7KIs2HQr_znW?usp=share_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary">
+
+                Certificates ↗
+
+            </a>
+
+
+            <a
+                href="#contact"
+                class="btn btn-secondary">
+
+                Contact
+
+            </a>
 
         </div>
 
@@ -1347,12 +1347,12 @@
             </div>
 
             <h2 class="section-title">
-                From data to business insight.
+                Data projects with a business perspective.
             </h2>
 
             <p class="section-description">
 
-                Selected analytics projects demonstrating customer analytics,
+                Selected projects demonstrating customer analytics,
                 machine learning, segmentation, recommendation systems
                 and multilingual consumer insights.
 
@@ -1361,11 +1361,12 @@
         </div>
 
 
-
         <div class="projects-grid">
 
 
-            <!-- PROJECT 1 -->
+            <!-- =================================================
+                 PROJECT 1
+            ================================================== -->
 
             <article class="project-card">
 
@@ -1373,7 +1374,9 @@
 
                     <div class="project-number">
 
-                        <span>01</span>
+                        <span>
+                            01
+                        </span>
 
                         <span class="status">
                             ONGOING
@@ -1381,10 +1384,12 @@
 
                     </div>
 
+
                     <h3>
                         Voice-of-Customer Analytics –
                         Multilingual Social Listening Pipeline
                     </h3>
+
 
                     <p class="project-purpose">
 
@@ -1395,13 +1400,28 @@
 
                     </p>
 
+
                     <div class="tools">
 
-                        <span class="tool">Python</span>
-                        <span class="tool">YouTube Data API</span>
-                        <span class="tool">Claude API</span>
-                        <span class="tool">BERTopic</span>
-                        <span class="tool">Hugging Face</span>
+                        <span class="tool">
+                            Python
+                        </span>
+
+                        <span class="tool">
+                            YouTube Data API
+                        </span>
+
+                        <span class="tool">
+                            Claude API
+                        </span>
+
+                        <span class="tool">
+                            BERTopic
+                        </span>
+
+                        <span class="tool">
+                            Hugging Face
+                        </span>
 
                     </div>
 
@@ -1481,7 +1501,7 @@
                     <div class="detail-block">
 
                         <h4>
-                            Data Quality & Limitations
+                            Data Quality
                         </h4>
 
                         <p>
@@ -1496,8 +1516,9 @@
                 </div>
 
 
-                <button class="project-toggle"
-                        onclick="toggleProject(this)">
+                <button
+                    class="project-toggle"
+                    onclick="toggleProject(this)">
 
                     <span>
                         View project details
@@ -1513,7 +1534,9 @@
 
 
 
-            <!-- PROJECT 2 -->
+            <!-- =================================================
+                 PROJECT 2
+            ================================================== -->
 
             <article class="project-card">
 
@@ -1521,7 +1544,9 @@
 
                     <div class="project-number">
 
-                        <span>02</span>
+                        <span>
+                            02
+                        </span>
 
                         <span class="status">
                             COMPLETED
@@ -1529,10 +1554,12 @@
 
                     </div>
 
+
                     <h3>
                         Customer Personality Segmentation
                         & Marketing Analytics
                     </h3>
+
 
                     <p class="project-purpose">
 
@@ -1543,12 +1570,24 @@
 
                     </p>
 
+
                     <div class="tools">
 
-                        <span class="tool">Python</span>
-                        <span class="tool">pandas</span>
-                        <span class="tool">scikit-learn</span>
-                        <span class="tool">K-Means</span>
+                        <span class="tool">
+                            Python
+                        </span>
+
+                        <span class="tool">
+                            pandas
+                        </span>
+
+                        <span class="tool">
+                            scikit-learn
+                        </span>
+
+                        <span class="tool">
+                            K-Means
+                        </span>
 
                     </div>
 
@@ -1579,7 +1618,7 @@
                         </h4>
 
                         <p>
-                            2,240 customer records with demographic,
+                            2,240 customer records covering demographic,
                             spending, campaign interaction,
                             web, catalog and store purchase variables.
                         </p>
@@ -1596,8 +1635,7 @@
                         <ul>
 
                             <li>
-                                Exploratory data analysis and
-                                distribution analysis.
+                                Exploratory data analysis.
                             </li>
 
                             <li>
@@ -1642,8 +1680,9 @@
                 </div>
 
 
-                <button class="project-toggle"
-                        onclick="toggleProject(this)">
+                <button
+                    class="project-toggle"
+                    onclick="toggleProject(this)">
 
                     <span>
                         View project details
@@ -1659,7 +1698,9 @@
 
 
 
-            <!-- PROJECT 3 -->
+            <!-- =================================================
+                 PROJECT 3
+            ================================================== -->
 
             <article class="project-card">
 
@@ -1667,7 +1708,9 @@
 
                     <div class="project-number">
 
-                        <span>03</span>
+                        <span>
+                            03
+                        </span>
 
                         <span class="status">
                             COMPLETED
@@ -1675,10 +1718,12 @@
 
                     </div>
 
+
                     <h3>
                         Customer Behavior & Product
                         Recommendation – Amazon Electronics
                     </h3>
+
 
                     <p class="project-purpose">
 
@@ -1688,12 +1733,24 @@
 
                     </p>
 
+
                     <div class="tools">
 
-                        <span class="tool">Python</span>
-                        <span class="tool">Collaborative Filtering</span>
-                        <span class="tool">SVD</span>
-                        <span class="tool">GridSearchCV</span>
+                        <span class="tool">
+                            Python
+                        </span>
+
+                        <span class="tool">
+                            Collaborative Filtering
+                        </span>
+
+                        <span class="tool">
+                            SVD
+                        </span>
+
+                        <span class="tool">
+                            GridSearchCV
+                        </span>
 
                     </div>
 
@@ -1783,8 +1840,9 @@
                 </div>
 
 
-                <button class="project-toggle"
-                        onclick="toggleProject(this)">
+                <button
+                    class="project-toggle"
+                    onclick="toggleProject(this)">
 
                     <span>
                         View project details
@@ -1800,7 +1858,9 @@
 
 
 
-            <!-- PROJECT 4 -->
+            <!-- =================================================
+                 PROJECT 4
+            ================================================== -->
 
             <article class="project-card">
 
@@ -1808,7 +1868,9 @@
 
                     <div class="project-number">
 
-                        <span>04</span>
+                        <span>
+                            04
+                        </span>
 
                         <span class="status">
                             COMPLETED
@@ -1816,10 +1878,12 @@
 
                     </div>
 
+
                     <h3>
                         Customer Behavior & Conversion Analytics –
                         ExtraaLearn
                     </h3>
+
 
                     <p class="project-purpose">
 
@@ -1829,12 +1893,24 @@
 
                     </p>
 
+
                     <div class="tools">
 
-                        <span class="tool">Python</span>
-                        <span class="tool">pandas</span>
-                        <span class="tool">Decision Tree</span>
-                        <span class="tool">Random Forest</span>
+                        <span class="tool">
+                            Python
+                        </span>
+
+                        <span class="tool">
+                            pandas
+                        </span>
+
+                        <span class="tool">
+                            Decision Tree
+                        </span>
+
+                        <span class="tool">
+                            Random Forest
+                        </span>
 
                     </div>
 
@@ -1926,8 +2002,9 @@
                 </div>
 
 
-                <button class="project-toggle"
-                        onclick="toggleProject(this)">
+                <button
+                    class="project-toggle"
+                    onclick="toggleProject(this)">
 
                     <span>
                         View project details
@@ -1940,7 +2017,6 @@
                 </button>
 
             </article>
-
 
         </div>
 
@@ -1968,10 +2044,11 @@
         </h2>
 
         <p class="section-description">
+
             Experience across software implementation,
             business analysis, consulting and global sales analytics.
-        </p>
 
+        </p>
 
 
         <div class="experience-list">
@@ -2005,19 +2082,23 @@
                         Munich, Germany
                     </h4>
 
+
                     <ul>
 
                         <li>
                             Integrated data from Adobe Analytics,
-                            SAP Datasphere, partner reports and
-                            internal sources into Power BI reporting
-                            solutions for global sales and D2C use cases.
+                            SAP Datasphere, partner reports
+                            (MOPOS, eStore, Dataroma, GfK)
+                            and internal sources into Power BI
+                            reporting solutions for global sales
+                            and D2C use cases.
                         </li>
 
                         <li>
                             Worked with stakeholders to define,
                             harmonize and monitor KPI logic,
-                            ensuring consistent reporting definitions.
+                            ensuring consistent reporting definitions
+                            across global sales use cases.
                         </li>
 
                         <li>
@@ -2037,9 +2118,10 @@
                         </li>
 
                         <li>
-                            Conducted ad-hoc data research and analysis
-                            to support business questions and reporting
-                            requirements.
+                            Conducted market and performance analysis
+                            using external partner and market data
+                            to support commercial discussions and
+                            business questions.
                         </li>
 
                     </ul>
@@ -2077,16 +2159,19 @@
                         Ho Chi Minh City, Vietnam
                     </h4>
 
+
                     <ul>
 
                         <li>
-                            Led project scoping and requirements workshops
-                            with Sales, Finance and Operations stakeholders.
+                            Led end-to-end project scoping and
+                            requirements workshops with clients,
+                            Sales, Finance and Operations.
                         </li>
 
                         <li>
-                            Translated business requirements into BRD/BRFD,
-                            BPMN/UML, project scope, milestones and deliverables.
+                            Translated business needs into BRD/BRFD,
+                            BPMN/UML, SOW, milestones, deliverables
+                            and project plans.
                         </li>
 
                         <li>
@@ -2102,9 +2187,10 @@
                         </li>
 
                         <li>
-                            Developed SQL-based reports and
-                            Power BI / Crystal Reports solutions
-                            and supported UAT, pilot, rollout and go-live.
+                            Built SQL-based reports and
+                            Power BI / Crystal Reports solutions,
+                            supporting UAT, pilot, mass rollout
+                            and go-live.
                         </li>
 
                     </ul>
@@ -2126,7 +2212,7 @@
                     </div>
 
                     <div class="experience-company">
-                        ICC VN
+                        ICC VN Innovative Solution Consulting Service
                     </div>
 
                 </div>
@@ -2142,6 +2228,7 @@
                         Ho Chi Minh City, Vietnam
                     </h4>
 
+
                     <ul>
 
                         <li>
@@ -2156,7 +2243,8 @@
 
                         <li>
                             Coordinated solution development,
-                            validation and integration testing.
+                            validation and integration testing,
+                            including API testing with Postman.
                         </li>
 
                         <li>
@@ -2205,11 +2293,13 @@
                         Ho Chi Minh City, Vietnam
                     </h4>
 
+
                     <ul>
 
                         <li>
                             Supported a six-month HRM transformation
-                            project covering approximately 2,000 employees.
+                            project covering approximately
+                            2,000 employees.
                         </li>
 
                         <li>
@@ -2252,51 +2342,74 @@
     <div class="about-container">
 
 
-        <div class="about-text">
+        <!-- IMAGE -->
+
+        <div class="about-image">
+
+            <img
+                src="IMG_2854.jpg"
+                alt="Nhu Y Dao">
+
+        </div>
+
+
+
+        <!-- CONTENT -->
+
+        <div class="about-content">
 
             <div class="section-label">
                 ABOUT ME
             </div>
 
+
             <h2>
                 From software implementation
-                to data-driven business insights.
+                to data & business analytics.
             </h2>
 
 
-            <p class="about-intro">
+            <p class="about-lead">
 
                 My career started in software implementation,
                 where I worked closely with business users to
-                understand requirements, design solutions and
-                support systems from development through go-live.
+                understand requirements, translate them into
+                functional solutions, and support projects from
+                design through implementation.
 
             </p>
 
 
             <p>
 
-                I then moved into
+                This experience led me into
                 <strong>Business Analysis and Consulting</strong>,
-                working across Sales, Finance, Operations and HR.
-                These experiences taught me how to connect business
-                problems with technology, data and people — from
-                requirements engineering and process design to UAT,
-                rollout and stakeholder management.
+                where I worked across Sales, Finance, Operations
+                and HR. It also shaped my interest in understanding
+                how business problems can be connected with
+                technology, data and people.
 
             </p>
 
 
             <p>
 
-                Wanting to deepen my understanding of business and
-                analytics, I challenged myself to pursue a
+                I later challenged myself to pursue a
                 <strong>Master's degree in International Business
-                & Economics in Germany</strong>.
+                & Economics in Germany</strong>, while continuing
+                to develop my analytical and technical skills.
 
-                Alongside my studies, I continued to build my skills
-                in <strong>Data Analytics, Business Intelligence,
-                Python and Data Science</strong>.
+            </p>
+
+
+            <p>
+
+                Alongside my professional experience, I have been
+                continuously building my knowledge in
+                <strong>Data Analytics, Business Intelligence,
+                Python, Machine Learning and Data Science</strong>
+                through professional work, academic study and
+                hands-on projects.
 
             </p>
 
@@ -2305,13 +2418,10 @@
 
                 Today, I work as a
                 <strong>Working Student in Global Sales at
-                BSH Home Appliances</strong>, focusing on D2C
-                business analytics.
-
-                My work involves Power BI, data integration,
-                commercial performance reporting and analytics —
-                turning data from different sources into insights
-                that support business decisions.
+                BSH Home Appliances</strong>, supporting analytics
+                for the D2C business. My work involves Power BI,
+                data integration, reporting automation and
+                commercial performance analysis.
 
             </p>
 
@@ -2319,76 +2429,81 @@
             <p>
 
                 I enjoy working at the intersection of
-                <strong>business, data and technology</strong>,
-                and I continuously update my knowledge in data
-                science and analytical methods.
-
-            </p>
-
-
-            <p>
-
-                Outside of work and study, I enjoy
-                <strong>travelling, discovering new places and
-                playing badminton</strong>.
+                <strong>business, data and technology</strong>
+                and continuously learning new approaches that
+                help turn data into meaningful business insights.
 
             </p>
 
 
             <div class="about-interests">
 
-                <span>
-                    ✈ Travel
-                </span>
 
-                <span>
-                    🏸 Badminton
-                </span>
+                <div class="interest">
 
-                <span>
-                    📊 Data Analytics
-                </span>
+                    <div class="interest-icon">
+                        ✈
+                    </div>
 
-                <span>
-                    🤖 Data Science
-                </span>
+                    <div>
 
-                <span>
-                    💡 Continuous Learning
-                </span>
+                        <strong>
+                            Travel
+                        </strong>
+
+                        <small>
+                            Exploring new places & perspectives
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="interest">
+
+                    <div class="interest-icon">
+                        🏸
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Badminton
+                        </strong>
+
+                        <small>
+                            My favourite way to stay active
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="interest">
+
+                    <div class="interest-icon">
+                        💡
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Continuous Learning
+                        </strong>
+
+                        <small>
+                            Data, AI & analytics
+                        </small>
+
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
-
-
-
-        <div>
-
-            <div class="about-image-frame">
-
-                <img
-                    src="IMG_2854.jpg"
-                    alt="Nhu Y in Paris"
-                    class="about-image">
-
-            </div>
-
-
-            <div class="about-image-caption">
-
-                <span>
-                    Currently based in Munich, Germany
-                </span>
-
-                <span>
-                    Business × Data × Technology
-                </span>
-
-            </div>
-
-        </div>
-
 
     </div>
 
@@ -2409,9 +2524,11 @@
             EDUCATION
         </div>
 
+
         <h2 class="section-title">
             Academic background.
         </h2>
+
 
         <div class="education-list">
 
@@ -2421,6 +2538,7 @@
                 <div class="education-date">
                     10/2023 – Present
                 </div>
+
 
                 <div class="education-content">
 
@@ -2434,7 +2552,7 @@
                     </h4>
 
                     <p>
-                        Full-time Program
+                        Germany
                     </p>
 
                 </div>
@@ -2449,20 +2567,20 @@
                     10/2024 – 02/2025
                 </div>
 
+
                 <div class="education-content">
 
                     <h3>
-                        Master of Arts:
+                        Erasmus Exchange –
                         Business Management
                     </h3>
 
                     <h4>
-                        Wroclaw Akademia Biznesu –
-                        Erasmus Exchange Program
+                        Wroclaw Akademia Biznesu
                     </h4>
 
                     <p>
-                        GPA 5.0 / 5.0
+                        Erasmus Exchange Program
                     </p>
 
                 </div>
@@ -2477,6 +2595,7 @@
                     10/2015 – 06/2019
                 </div>
 
+
                 <div class="education-content">
 
                     <h3>
@@ -2489,7 +2608,7 @@
                     </h4>
 
                     <p>
-                        Full-time Program · GPA 3.26 / 4.0
+                        International Business
                     </p>
 
                 </div>
@@ -2517,6 +2636,7 @@
         <div class="section-label">
             TECHNICAL SKILLS
         </div>
+
 
         <h2 class="section-title">
             Tools I work with.
@@ -2592,9 +2712,11 @@
             CERTIFICATIONS & LEARNING
         </div>
 
+
         <h2 class="section-title">
             Continuous learning.
         </h2>
+
 
         <div class="cert-box">
 
@@ -2643,20 +2765,24 @@
             CONTACT
         </div>
 
+
         <h2 class="section-title">
             Let's connect.
         </h2>
+
 
         <p class="contact-description">
 
             Interested in data analytics, business intelligence,
             business analysis or consulting?
+
             Feel free to connect with me.
 
         </p>
 
 
         <div class="contact-links">
+
 
             <a
                 href="https://www.linkedin.com/in/nhuydao/"
@@ -2668,6 +2794,11 @@
 
             </a>
 
+
+            <!--
+                Replace the email below
+                with your actual email.
+            -->
 
             <a
                 href="mailto:dao.y1997@gmail.com"
@@ -2708,6 +2839,7 @@
             © 2026 Dao Ngoc Nhu Y
         </p>
 
+
         <p>
             Data Analytics · Business Intelligence · Business Analysis
         </p>
@@ -2724,36 +2856,43 @@
 
 <script>
 
-    function toggleProject(button) {
+function toggleProject(button) {
 
-        const card = button.closest(".project-card");
+    const card =
+        button.closest(".project-card");
 
-        card.classList.toggle("expanded");
+    card.classList.toggle("expanded");
 
-        const text =
-            button.querySelector("span:first-child");
+    const label =
+        button.querySelector("span:first-child");
 
-        if (card.classList.contains("expanded")) {
+    if (card.classList.contains("expanded")) {
 
-            text.textContent = "Hide project details";
+        label.textContent =
+            "Hide project details";
 
-        } else {
+    } else {
 
-            text.textContent = "View project details";
-
-        }
+        label.textContent =
+            "View project details";
 
     }
 
+}
 
-    /* Smooth navigation */
 
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
+/* Smooth scrolling */
 
-        link.addEventListener("click", function (e) {
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(link => {
+
+        link.addEventListener("click", function(e) {
 
             const target =
-                document.querySelector(this.getAttribute("href"));
+                document.querySelector(
+                    this.getAttribute("href")
+                );
 
             if (target) {
 
@@ -2774,3 +2913,4 @@
 
 </body>
 </html>
+```
