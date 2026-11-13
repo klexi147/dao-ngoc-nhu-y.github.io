@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dao Ngoc Nhu Y | Data Analytics Portfolio</title>
+    <title>DAO NGOC NHU Y | Data Analytics & Business Intelligence</title>
 
     <meta name="description"
-          content="Data Analytics, Business Intelligence and Consumer Insights Portfolio of Dao Ngoc Nhu Y.">
+        content="Portfolio of Dao Ngoc Nhu Y - Data Analytics, Business Intelligence, eCommerce Analytics, SAP and Consumer Insights.">
 
     <style>
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         html {
@@ -27,13 +28,12 @@
                 BlinkMacSystemFont,
                 "Segoe UI",
                 Roboto,
-                Helvetica,
                 Arial,
                 sans-serif;
 
-            background: #f7f8fa;
-            color: #17202a;
-            line-height: 1.6;
+            background: #0b0f14;
+            color: #e8edf3;
+            line-height: 1.7;
         }
 
         a {
@@ -47,53 +47,54 @@
             margin: auto;
         }
 
-
         /* =========================
            NAVIGATION
         ========================= */
 
         nav {
-            background: rgba(255,255,255,0.96);
-            border-bottom: 1px solid #e5e7eb;
-
             position: sticky;
             top: 0;
+            z-index: 1000;
 
-            z-index: 100;
+            background: rgba(11, 15, 20, 0.92);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid #202832;
         }
 
         .nav-container {
-            width: 90%;
             max-width: 1150px;
-            height: 70px;
-
+            width: 90%;
             margin: auto;
 
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
+
+            height: 65px;
         }
 
         .logo {
             font-size: 18px;
             font-weight: 700;
-            letter-spacing: -0.4px;
+            letter-spacing: 0.5px;
         }
 
         .nav-links {
-            list-style: none;
-
             display: flex;
             gap: 28px;
+            list-style: none;
+        }
 
+        .nav-links a {
+            color: #9da8b5;
             font-size: 14px;
-            color: #66717c;
+            transition: 0.2s;
         }
 
         .nav-links a:hover {
-            color: #17202a;
+            color: #ffffff;
         }
-
 
         /* =========================
            HERO
@@ -105,12 +106,7 @@
             display: flex;
             align-items: center;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #f7f8fa 0%,
-                    #edf1f4 100%
-                );
+            border-bottom: 1px solid #202832;
         }
 
         .hero-content {
@@ -118,470 +114,385 @@
         }
 
         .eyebrow {
-            display: inline-block;
-
-            font-size: 12px;
-            font-weight: 700;
-
-            letter-spacing: 1.5px;
+            color: #7f8b99;
+            font-size: 14px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-
-            color: #637383;
-
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: clamp(45px, 7vw, 78px);
-
-            line-height: 1.02;
-            letter-spacing: -4px;
-
-            margin-bottom: 25px;
+            font-size: clamp(42px, 7vw, 78px);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 22px;
         }
 
         .hero h1 span {
-            color: #536b82;
+            color: #8fb8ff;
+        }
+
+        .hero-subtitle {
+            font-size: 21px;
+            color: #b5bec9;
+            max-width: 760px;
+            margin-bottom: 30px;
         }
 
         .hero-description {
-            max-width: 720px;
-
-            font-size: 19px;
-
-            color: #5f6b76;
-
+            max-width: 760px;
+            color: #8995a3;
             margin-bottom: 35px;
         }
 
         .buttons {
             display: flex;
-            gap: 14px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
         .btn {
-            display: inline-block;
-
-            padding: 12px 22px;
-
-            border-radius: 6px;
+            padding: 11px 20px;
+            border: 1px solid #34404d;
+            border-radius: 7px;
 
             font-size: 14px;
             font-weight: 600;
 
-            transition: 0.2s ease;
+            transition: 0.2s;
         }
 
         .btn-primary {
-            background: #17202a;
-            color: white;
+            background: #e8edf3;
+            color: #0b0f14;
+            border-color: #e8edf3;
         }
 
         .btn-primary:hover {
-            background: #34495e;
-            transform: translateY(-2px);
+            background: #ffffff;
         }
 
         .btn-secondary {
-            background: white;
-            border: 1px solid #d5dbe0;
+            color: #d9e0e7;
         }
 
         .btn-secondary:hover {
-            border-color: #17202a;
-            transform: translateY(-2px);
+            background: #171e27;
         }
 
-
         /* =========================
-           GENERAL SECTIONS
+           SECTIONS
         ========================= */
 
         section {
             padding: 100px 0;
         }
 
-        .section-header {
-            margin-bottom: 45px;
-        }
-
-        .section-number {
-            font-size: 11px;
-            font-weight: 700;
-
-            letter-spacing: 1.5px;
-
-            color: #7b8794;
-
-            margin-bottom: 10px;
-        }
-
-        .section-title {
-            font-size: 38px;
-
-            letter-spacing: -1px;
-
+        .section-label {
+            color: #7f8b99;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             margin-bottom: 12px;
         }
 
-        .section-description {
-            max-width: 700px;
-
-            color: #6b7280;
+        .section-title {
+            font-size: 34px;
+            margin-bottom: 35px;
+            letter-spacing: -0.5px;
         }
 
+        .section-intro {
+            color: #9da8b5;
+            max-width: 800px;
+            margin-bottom: 45px;
+        }
 
         /* =========================
            ABOUT
         ========================= */
 
-        .about {
-            background: white;
-        }
-
         .about-grid {
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
-            gap: 70px;
+            gap: 60px;
         }
 
         .about-text p {
-            color: #5f6b76;
-
+            color: #aab4bf;
             margin-bottom: 18px;
         }
 
         .focus-list {
-            list-style: none;
-        }
-
-        .focus-list li {
-            padding: 14px 0;
-
-            border-bottom: 1px solid #e8ebee;
-
-            font-weight: 500;
-        }
-
-        .focus-list li::before {
-            content: "→";
-
-            margin-right: 12px;
-
-            color: #6b7c8f;
-        }
-
-
-        /* =========================
-           PROJECTS
-        ========================= */
-
-        .projects {
-            background: #f7f8fa;
-        }
-
-        .project-grid {
             display: grid;
-
-            grid-template-columns: repeat(2, 1fr);
-
-            gap: 24px;
+            gap: 15px;
         }
 
-        .project-card {
-            background: white;
-
-            border: 1px solid #e5e7eb;
-
-            border-radius: 10px;
-
-            padding: 30px;
-
-            min-height: 390px;
-
-            display: flex;
-            flex-direction: column;
-
-            transition: 0.25s ease;
+        .focus-item {
+            border-left: 2px solid #405267;
+            padding-left: 18px;
         }
 
-        .project-card:hover {
-            transform: translateY(-6px);
-
-            box-shadow:
-                0 15px 35px rgba(23,32,42,0.08);
+        .focus-item strong {
+            display: block;
+            color: #e8edf3;
+            margin-bottom: 4px;
         }
 
-        .project-status {
-            font-size: 11px;
-
-            font-weight: 700;
-
-            text-transform: uppercase;
-
-            letter-spacing: 1px;
-
-            color: #6b7c8f;
-
-            margin-bottom: 20px;
-        }
-
-        .project-card h3 {
-            font-size: 23px;
-
-            line-height: 1.2;
-
-            margin-bottom: 16px;
-        }
-
-        .project-card p {
-            font-size: 14px;
-
-            color: #6b7280;
-
-            margin-bottom: 24px;
-        }
-
-        .tools {
-            margin-top: auto;
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 7px;
-        }
-
-        .tool {
-            background: #f0f2f4;
-
-            color: #4d5a67;
-
-            padding: 5px 9px;
-
-            border-radius: 4px;
-
-            font-size: 11px;
-
-            font-weight: 600;
-        }
-
-        .project-link {
-            margin-top: 24px;
-
-            font-size: 13px;
-
-            font-weight: 700;
-
-            color: #34495e;
-        }
-
-        .project-link:hover {
-            text-decoration: underline;
-        }
-
-
-        /* =========================
-           SKILLS
-        ========================= */
-
-        .skills {
-            background: white;
-        }
-
-        .skills-grid {
-            display: grid;
-
-            grid-template-columns: repeat(2, 1fr);
-
-            gap: 20px;
-        }
-
-        .skill-box {
-            border: 1px solid #e5e7eb;
-
-            padding: 25px;
-
-            border-radius: 8px;
-        }
-
-        .skill-box h3 {
-            font-size: 15px;
-
-            margin-bottom: 12px;
-        }
-
-        .skill-box p {
-            color: #68737d;
-
+        .focus-item span {
+            color: #8f9aa7;
             font-size: 14px;
         }
-
 
         /* =========================
            EXPERIENCE
         ========================= */
 
-        .experience {
-            background: #f7f8fa;
+        .experience-card {
+            border: 1px solid #222c36;
+            background: #10161d;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 10px;
         }
 
-        .experience-item {
-            max-width: 850px;
-
-            border-left: 2px solid #dfe4e8;
-
-            padding-left: 30px;
-
-            margin-bottom: 35px;
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 8px;
         }
 
-        .experience-item h3 {
+        .experience-title {
             font-size: 20px;
+            font-weight: 700;
+        }
 
+        .experience-company {
+            color: #8fb8ff;
             margin-bottom: 5px;
         }
 
-        .experience-meta {
-            color: #6b7280;
-
-            font-size: 13px;
-
-            margin-bottom: 15px;
+        .experience-date {
+            color: #7f8b99;
+            font-size: 14px;
+            white-space: nowrap;
         }
 
-        .experience-item p {
-            color: #5f6b76;
+        .experience-card ul {
+            margin-top: 20px;
+            padding-left: 20px;
+            color: #aab4bf;
+        }
 
+        .experience-card li {
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            border: 1px solid #222c36;
+            background: #10161d;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.25s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: #405267;
+        }
+
+        .project-image {
+            height: 180px;
+            background:
+                linear-gradient(135deg, #151d26, #0d1218);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #596675;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-status {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #7f8b99;
+            margin-bottom: 10px;
+        }
+
+        .project-title {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .project-description {
+            color: #929daa;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .project-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .tag {
+            padding: 5px 9px;
+            border: 1px solid #303b47;
+            border-radius: 5px;
+
+            color: #aab5c1;
+            font-size: 11px;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            border: 1px solid #222c36;
+            background: #10161d;
+            padding: 25px;
+            border-radius: 9px;
+        }
+
+        .skill-card h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .skill-card p {
+            color: #929daa;
             font-size: 14px;
         }
 
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education-item {
+            border-left: 2px solid #405267;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        .education-degree {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .education-school {
+            color: #8fb8ff;
+        }
+
+        .education-date {
+            color: #7f8b99;
+            font-size: 14px;
+        }
 
         /* =========================
            CONTACT
         ========================= */
 
         .contact {
-            background: #17202a;
-
-            color: white;
-        }
-
-        .contact .section-number {
-            color: #9ca8b3;
-        }
-
-        .contact h2 {
-            font-size: 42px;
-
-            letter-spacing: -1px;
-
-            margin-bottom: 18px;
+            text-align: center;
+            padding-bottom: 120px;
         }
 
         .contact p {
+            color: #929daa;
             max-width: 650px;
-
-            color: #b8c1c9;
-
-            margin-bottom: 30px;
+            margin: 0 auto 30px;
         }
 
         .contact-links {
             display: flex;
-
+            justify-content: center;
             gap: 25px;
-
             flex-wrap: wrap;
         }
 
         .contact-links a {
-            font-weight: 600;
-
-            font-size: 14px;
-
-            border-bottom: 1px solid #697680;
-
-            padding-bottom: 4px;
+            color: #b9c4cf;
+            border-bottom: 1px solid #394654;
+            padding-bottom: 3px;
         }
 
         .contact-links a:hover {
-            border-color: white;
+            color: #ffffff;
         }
-
 
         /* =========================
            FOOTER
         ========================= */
 
         footer {
-            background: #17202a;
-
-            color: #7f8b95;
-
-            border-top: 1px solid #303a43;
-
+            border-top: 1px solid #202832;
             padding: 25px 0;
-
+            text-align: center;
+            color: #65717e;
             font-size: 12px;
         }
-
 
         /* =========================
            RESPONSIVE
         ========================= */
 
-        @media (max-width: 850px) {
-
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-
-                gap: 35px;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-
-        @media (max-width: 650px) {
+        @media (max-width: 800px) {
 
             .nav-links {
                 display: none;
             }
 
             .hero {
-                min-height: 580px;
+                min-height: 560px;
             }
 
             .hero h1 {
                 font-size: 48px;
-
-                letter-spacing: -2px;
             }
 
-            .hero-description {
-                font-size: 17px;
+            .about-grid,
+            .projects-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+
+            .experience-date {
+                white-space: normal;
             }
 
             section {
                 padding: 70px 0;
-            }
-
-            .section-title {
-                font-size: 32px;
-            }
-
-            .contact h2 {
-                font-size: 34px;
             }
         }
 
@@ -591,90 +502,72 @@
 
 <body>
 
-
 <!-- =========================
      NAVIGATION
 ========================= -->
 
 <nav>
-
     <div class="nav-container">
 
-        <div class="logo">
+        <a href="#home" class="logo">
             DAO NGOC NHU Y
-        </div>
+        </a>
 
         <ul class="nav-links">
-
-            <li>
-                <a href="#about">About</a>
-            </li>
-
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
-
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-
-            <li>
-                <a href="#experience">Experience</a>
-            </li>
-
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
 
     </div>
-
 </nav>
-
 
 
 <!-- =========================
      HERO
 ========================= -->
 
-<header class="hero">
+<header class="hero" id="home">
 
     <div class="container">
 
         <div class="hero-content">
 
             <div class="eyebrow">
-                Data Analytics · Business Intelligence · Consumer Insights
+                Data Analytics · Business Intelligence · eCommerce
             </div>
 
             <h1>
                 DAO NGOC <span>NHU Y</span>
             </h1>
 
+            <div class="hero-subtitle">
+                Data Analytics & Business Intelligence professional
+                with 5+ years of experience across eCommerce,
+                business performance, consulting and business analysis.
+            </div>
+
             <p class="hero-description">
-
-                Data Analytics and Business Intelligence professional
-                with experience transforming business and consumer data
-                into actionable insights using analytics, visualization,
-                machine learning and data integration.
-
+                I build reporting solutions, analyze business and
+                consumer data, and translate complex business
+                requirements into practical data-driven solutions
+                using Power BI, SQL, Python, SAP and data integration tools.
             </p>
 
             <div class="buttons">
 
-                <a href="#projects"
-                   class="btn btn-primary">
-
+                <a class="btn btn-primary" href="#projects">
                     Explore Projects
-
                 </a>
 
-                <a href="#contact"
-                   class="btn btn-secondary">
-
-                    Contact Me
-
+                <a class="btn btn-secondary"
+                   href="https://www.linkedin.com/in/nhuydao/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    LinkedIn
                 </a>
 
             </div>
@@ -686,81 +579,80 @@
 </header>
 
 
-
 <!-- =========================
      ABOUT
 ========================= -->
 
-<section id="about" class="about">
+<section id="about">
 
     <div class="container">
 
-        <div class="section-header">
-
-            <div class="section-number">
-                01 — ABOUT
-            </div>
-
-            <h2 class="section-title">
-                Turning data into business insights.
-            </h2>
-
+        <div class="section-label">
+            About
         </div>
 
+        <h2 class="section-title">
+            Turning business questions into data-driven solutions.
+        </h2>
 
         <div class="about-grid">
 
             <div class="about-text">
 
                 <p>
-                    I work across Data Analytics, Business Intelligence,
-                    Business Analysis and consumer-focused analytics,
-                    combining technical data skills with business
-                    understanding.
+                    My background combines Data Analytics, Business
+                    Intelligence, Business Analysis and consulting.
                 </p>
 
                 <p>
-                    My experience includes Power BI reporting,
-                    SQL and data integration, SAP-based environments,
-                    eCommerce analytics, customer analytics and
-                    machine learning projects.
+                    I currently work in Global Sales Data Analytics at
+                    BSH Home Appliances Group in Munich, where I work
+                    with eCommerce and commercial performance data
+                    across Power BI, Adobe Analytics, SAP Datasphere
+                    and external market sources.
                 </p>
 
                 <p>
-                    I am particularly interested in using data to
-                    understand customer behavior, market trends and
-                    business performance and translate findings into
-                    practical decisions.
+                    Previously, I worked as a Lead Consultant and
+                    Business Analyst, supporting requirements engineering,
+                    reporting solutions, system implementation,
+                    UAT, rollout and go-live activities.
                 </p>
 
             </div>
 
 
-            <div>
+            <div class="focus-list">
 
-                <ul class="focus-list">
+                <div class="focus-item">
+                    <strong>Business Intelligence</strong>
+                    <span>
+                        Power BI, DAX, Power Query, SQL and automated reporting
+                    </span>
+                </div>
 
-                    <li>
-                        Data Analytics & Business Intelligence
-                    </li>
+                <div class="focus-item">
+                    <strong>eCommerce Analytics</strong>
+                    <span>
+                        Adobe Analytics, KPI analysis, AOV, Conversion Rate,
+                        traffic and commercial performance
+                    </span>
+                </div>
 
-                    <li>
-                        eCommerce & Commercial Analytics
-                    </li>
+                <div class="focus-item">
+                    <strong>Data & SAP</strong>
+                    <span>
+                        SAP HANA, SAP Datasphere, SAP BW and data integration
+                    </span>
+                </div>
 
-                    <li>
-                        Consumer & Customer Insights
-                    </li>
-
-                    <li>
-                        Machine Learning & AI Analytics
-                    </li>
-
-                    <li>
-                        Business Analysis & Data-driven Solutions
-                    </li>
-
-                </ul>
+                <div class="focus-item">
+                    <strong>Consumer & Data Science</strong>
+                    <span>
+                        Python, machine learning, customer segmentation,
+                        recommendation systems and NLP
+                    </span>
+                </div>
 
             </div>
 
@@ -769,434 +661,179 @@
     </div>
 
 </section>
-
-
-
-<!-- =========================
-     PROJECTS
-========================= -->
-
-<section id="projects" class="projects">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <div class="section-number">
-                02 — PROJECTS
-            </div>
-
-            <h2 class="section-title">
-                Selected Analytics Projects
-            </h2>
-
-            <p class="section-description">
-
-                Selected projects combining data analysis,
-                consumer insights, machine learning and
-                business problem solving.
-
-            </p>
-
-        </div>
-
-
-        <div class="project-grid">
-
-
-            <!-- PROJECT 1 -->
-
-            <div class="project-card">
-
-                <div class="project-status">
-                    Ongoing
-                </div>
-
-                <h3>
-                    Voice-of-Customer Analytics –
-                    Multilingual Social Listening Pipeline
-                </h3>
-
-                <p>
-
-                    Multilingual consumer feedback analysis across
-                    DE/UK/NL/US to identify pain points, product topics,
-                    and feature requests from 7,500+ public YouTube
-                    records (videos and comments, 2023–2026).
-
-                </p>
-
-                <div class="tools">
-
-                    <span class="tool">
-                        Python
-                    </span>
-
-                    <span class="tool">
-                        YouTube Data API
-                    </span>
-
-                    <span class="tool">
-                        Claude API
-                    </span>
-
-                    <span class="tool">
-                        BERTopic
-                    </span>
-
-                    <span class="tool">
-                        Hugging Face
-                    </span>
-
-                </div>
-
-                <a href="projects/voc-analytics.html"
-                   class="project-link">
-
-                    View Project →
-
-                </a>
-
-            </div>
-
-
-
-            <!-- PROJECT 2 -->
-
-            <div class="project-card">
-
-                <div class="project-status">
-                    Completed
-                </div>
-
-                <h3>
-                    Customer Personality Segmentation
-                    & Marketing Analytics
-                </h3>
-
-                <p>
-
-                    Customer segmentation based on demographics,
-                    spending, purchasing behavior, and campaign
-                    response to support targeted marketing.
-
-                </p>
-
-                <div class="tools">
-
-                    <span class="tool">
-                        Python
-                    </span>
-
-                    <span class="tool">
-                        K-Means
-                    </span>
-
-                    <span class="tool">
-                        scikit-learn
-                    </span>
-
-                </div>
-
-                <a href="projects/customer-segmentation.html"
-                   class="project-link">
-
-                    View Project →
-
-                </a>
-
-            </div>
-
-
-
-            <!-- PROJECT 3 -->
-
-            <div class="project-card">
-
-                <div class="project-status">
-                    Completed
-                </div>
-
-                <h3>
-                    Customer Behavior & Product
-                    Recommendation – Amazon Electronics
-                </h3>
-
-                <p>
-
-                    Analysis of 7.8M+ product-rating interactions
-                    and development of personalized recommendation
-                    models.
-
-                </p>
-
-                <div class="tools">
-
-                    <span class="tool">
-                        Python
-                    </span>
-
-                    <span class="tool">
-                        Collaborative Filtering
-                    </span>
-
-                    <span class="tool">
-                        SVD
-                    </span>
-
-                    <span class="tool">
-                        GridSearchCV
-                    </span>
-
-                </div>
-
-                <a href="projects/recommendation-system.html"
-                   class="project-link">
-
-                    View Project →
-
-                </a>
-
-            </div>
-
-
-
-            <!-- PROJECT 4 -->
-
-            <div class="project-card">
-
-                <div class="project-status">
-                    Completed
-                </div>
-
-                <h3>
-                    Customer Behavior & Conversion
-                    Analytics – ExtraaLearn
-                </h3>
-
-                <p>
-
-                    Analysis of 4,612 leads and predictive modeling
-                    to identify conversion drivers and support
-                    lead prioritization.
-
-                </p>
-
-                <div class="tools">
-
-                    <span class="tool">
-                        Python
-                    </span>
-
-                    <span class="tool">
-                        Decision Tree
-                    </span>
-
-                    <span class="tool">
-                        Random Forest
-                    </span>
-
-                </div>
-
-                <a href="projects/extraalearn.html"
-                   class="project-link">
-
-                    View Project →
-
-                </a>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     SKILLS
-========================= -->
-
-<section id="skills" class="skills">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <div class="section-number">
-                03 — TECHNICAL SKILLS
-            </div>
-
-            <h2 class="section-title">
-                Technical Toolkit
-            </h2>
-
-        </div>
-
-
-        <div class="skills-grid">
-
-
-            <div class="skill-box">
-
-                <h3>
-                    Data & BI
-                </h3>
-
-                <p>
-
-                    Power BI · DAX · Power Query · Power BI Service ·
-                    SQL · Python · Excel · VBA · Tableau · Crystal Reports
-
-                </p>
-
-            </div>
-
-
-            <div class="skill-box">
-
-                <h3>
-                    Data Science & Analytics
-                </h3>
-
-                <p>
-
-                    pandas · scikit-learn · K-Means · Machine Learning ·
-                    Statistical Analysis · Data Visualization · EDA · NLP
-
-                </p>
-
-            </div>
-
-
-            <div class="skill-box">
-
-                <h3>
-                    SAP & Data
-                </h3>
-
-                <p>
-
-                    SAP HANA · SAP Business One · SAP Datasphere ·
-                    SAP BW · ETL · Data Integration
-
-                </p>
-
-            </div>
-
-
-            <div class="skill-box">
-
-                <h3>
-                    Business Analysis
-                </h3>
-
-                <p>
-
-                    Requirements Engineering · BRD/BRFD · BPMN · UML ·
-                    UAT · Process Design · Stakeholder Management ·
-                    Project Coordination
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
 
 
 <!-- =========================
      EXPERIENCE
 ========================= -->
 
-<section id="experience" class="experience">
+<section id="experience">
 
     <div class="container">
 
-        <div class="section-header">
+        <div class="section-label">
+            Experience
+        </div>
 
-            <div class="section-number">
-                04 — EXPERIENCE
+        <h2 class="section-title">
+            Professional Experience
+        </h2>
+
+
+        <!-- BSH -->
+
+        <div class="experience-card">
+
+            <div class="experience-header">
+
+                <div>
+                    <div class="experience-title">
+                        Data Analytics in Global Sales – Working Student
+                    </div>
+
+                    <div class="experience-company">
+                        BSH Home Appliances Group · Munich, Germany
+                    </div>
+                </div>
+
+                <div class="experience-date">
+                    05/2026 – Present
+                </div>
+
             </div>
 
-            <h2 class="section-title">
-                Professional Experience
-            </h2>
+
+            <ul>
+
+                <li>
+                    Integrated Adobe Analytics, SAP Datasphere,
+                    partner reports including MOPOS, eStore, Dataroma
+                    and GfK, and internal sources into Power BI reporting
+                    solutions for eCommerce and commercial performance monitoring.
+                </li>
+
+                <li>
+                    Worked with stakeholders to define, harmonize and
+                    monitor KPI logic across eCommerce and Global Sales
+                    reporting use cases.
+                </li>
+
+                <li>
+                    Prepared and analyzed eCommerce and market data
+                    using Power Query and Excel/VBA and automated recurring
+                    reporting tasks using Power Automate and Power BI Service.
+                </li>
+
+                <li>
+                    Developed and maintained 7+ Power BI dashboards
+                    covering E-commerce, Marketing Campaigns, Sales,
+                    SPC, Business Plan, Pricing & Assortment and D2C
+                    commercial performance.
+                </li>
+
+                <li>
+                    Conducted market and performance analysis using
+                    GfK and Amazon reports to analyze pricing and
+                    assortment patterns and market price sensitivity.
+                </li>
+
+            </ul>
 
         </div>
 
 
-        <div class="experience-item">
+        <!-- CONSULTANT -->
 
-            <h3>
-                Data Analytics in Global Sales —
-                Working Student
-            </h3>
+        <div class="experience-card">
 
-            <div class="experience-meta">
-                BSH Hausgeräte GmbH · Munich · 2026 – Present
+            <div class="experience-header">
+
+                <div>
+                    <div class="experience-title">
+                        Lead Consultant
+                    </div>
+
+                    <div class="experience-company">
+                        BEONE Solution Consulting & Support Services
+                    </div>
+                </div>
+
+                <div class="experience-date">
+                    04/2022 – 08/2023
+                </div>
+
             </div>
 
-            <p>
+            <ul>
 
-                Working on Power BI reporting, eCommerce and
-                commercial analytics, data integration and
-                reporting automation across global sales
-                use cases.
+                <li>
+                    Led requirements workshops with clients,
+                    Sales, Finance and Operations and translated
+                    business needs into BRD/BRFD, BPMN/UML workflows
+                    and solution scope.
+                </li>
 
-            </p>
+                <li>
+                    Designed reporting automation workflows and
+                    aligned data structures with SQL and SAP HANA Studio.
+                </li>
+
+                <li>
+                    Built SQL-based reports and Power BI dashboards
+                    for KPI tracking and decision support.
+                </li>
+
+                <li>
+                    Managed UAT, Pilot, Mass Rollout and Go-live
+                    activities and coordinated cross-functional teams.
+                </li>
+
+            </ul>
 
         </div>
 
 
-        <div class="experience-item">
+        <!-- BUSINESS ANALYST -->
 
-            <h3>
-                Lead Consultant
-            </h3>
+        <div class="experience-card">
 
-            <div class="experience-meta">
-                BEONE Solution Consulting & Support Services · 2022 – 2023
+            <div class="experience-header">
+
+                <div>
+                    <div class="experience-title">
+                        Business Analyst
+                    </div>
+
+                    <div class="experience-company">
+                        ICC VN Innovative Solution Consulting Service
+                    </div>
+                </div>
+
+                <div class="experience-date">
+                    02/2021 – 03/2022
+                </div>
+
             </div>
 
-            <p>
+            <ul>
 
-                Led business requirements, solution design,
-                reporting automation, stakeholder coordination,
-                UAT and implementation projects across
-                business functions.
+                <li>
+                    Led requirements workshops across Sales,
+                    Operations and Finance and translated business
+                    pain points into functional solution requirements.
+                </li>
 
-            </p>
+                <li>
+                    Developed Power BI dashboards and automated
+                    Excel reporting using Power Query, DAX and SQL.
+                </li>
 
-        </div>
+                <li>
+                    Supported testing, UAT, rollout and go-live
+                    across business and technical stakeholders.
+                </li>
 
-
-        <div class="experience-item">
-
-            <h3>
-                Business Analyst
-            </h3>
-
-            <div class="experience-meta">
-                ICC VN Innovative Solution Consulting Service · 2021 – 2022
-            </div>
-
-            <p>
-
-                Translated business requirements into functional
-                solutions, supported software implementation
-                and developed Power BI and automated reporting
-                solutions.
-
-            </p>
+            </ul>
 
         </div>
 
@@ -1204,6 +841,348 @@
 
 </section>
 
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-label">
+            Selected Projects
+        </div>
+
+        <h2 class="section-title">
+            Data Analytics & Machine Learning Projects
+        </h2>
+
+        <p class="section-intro">
+            Selected projects demonstrating applications of
+            consumer analytics, machine learning, recommendation
+            systems and multilingual data analysis.
+        </p>
+
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 1 -->
+
+            <article class="project-card">
+
+                <div class="project-image">
+                    VOC ANALYTICS
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-status">
+                        Ongoing
+                    </div>
+
+                    <h3 class="project-title">
+                        Voice-of-Customer Analytics –
+                        Multilingual Social Listening Pipeline
+                    </h3>
+
+                    <p class="project-description">
+                        Multilingual consumer feedback analysis across
+                        DE, UK, NL and US to identify pain points,
+                        product topics and feature requests from
+                        7,500+ public YouTube records.
+                    </p>
+
+                    <div class="project-tools">
+
+                        <span class="tag">Python</span>
+                        <span class="tag">YouTube Data API</span>
+                        <span class="tag">Claude API</span>
+                        <span class="tag">BERTopic</span>
+                        <span class="tag">Hugging Face</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 2 -->
+
+            <article class="project-card">
+
+                <div class="project-image">
+                    CUSTOMER SEGMENTATION
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-status">
+                        Completed
+                    </div>
+
+                    <h3 class="project-title">
+                        Customer Personality Segmentation
+                        & Marketing Analytics
+                    </h3>
+
+                    <p class="project-description">
+                        Customer segmentation based on demographics,
+                        spending, purchasing behavior and campaign
+                        response to support targeted marketing.
+                    </p>
+
+                    <div class="project-tools">
+
+                        <span class="tag">Python</span>
+                        <span class="tag">K-Means</span>
+                        <span class="tag">scikit-learn</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 3 -->
+
+            <article class="project-card">
+
+                <div class="project-image">
+                    RECOMMENDATION SYSTEM
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-status">
+                        Completed
+                    </div>
+
+                    <h3 class="project-title">
+                        Customer Behavior & Product Recommendation –
+                        Amazon Electronics
+                    </h3>
+
+                    <p class="project-description">
+                        Analysis of 7.8M+ product-rating interactions
+                        and development of personalized recommendation
+                        models.
+                    </p>
+
+                    <div class="project-tools">
+
+                        <span class="tag">Python</span>
+                        <span class="tag">Collaborative Filtering</span>
+                        <span class="tag">SVD</span>
+                        <span class="tag">GridSearchCV</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PROJECT 4 -->
+
+            <article class="project-card">
+
+                <div class="project-image">
+                    CONVERSION ANALYTICS
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-status">
+                        Completed
+                    </div>
+
+                    <h3 class="project-title">
+                        Customer Behavior & Conversion Analytics –
+                        ExtraaLearn
+                    </h3>
+
+                    <p class="project-description">
+                        Analysis of 4,612 leads and predictive modeling
+                        to identify conversion drivers and support
+                        lead prioritization.
+                    </p>
+
+                    <div class="project-tools">
+
+                        <span class="tag">Python</span>
+                        <span class="tag">Decision Tree</span>
+                        <span class="tag">Random Forest</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TECHNICAL SKILLS
+========================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-label">
+            Technical Skills
+        </div>
+
+        <h2 class="section-title">
+            Tools & Capabilities
+        </h2>
+
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+
+                <h3>
+                    Data & BI
+                </h3>
+
+                <p>
+                    Power BI, DAX, Power Query, Power BI Service,
+                    SQL, Python, Excel, VBA, Crystal Reports
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Data Science & Analytics
+                </h3>
+
+                <p>
+                    pandas, scikit-learn, K-Means, Machine Learning,
+                    Statistical Analysis, Data Visualization,
+                    Exploratory Data Analysis, NLP
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    SAP & Data Integration
+                </h3>
+
+                <p>
+                    SAP HANA, SAP Business One, SAP Datasphere,
+                    SAP BW, ETL and data integration
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Business Analysis
+                </h3>
+
+                <p>
+                    Requirements Engineering, BRD/BRFD, BPMN,
+                    UML, UAT, process design, stakeholder management,
+                    project coordination
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-label">
+            Education
+        </div>
+
+        <h2 class="section-title">
+            Education & Professional Development
+        </h2>
+
+
+        <div class="education-item">
+
+            <div class="education-degree">
+                Master of Arts – International Business & Economics
+            </div>
+
+            <div class="education-school">
+                Schmalkalden University of Applied Sciences
+            </div>
+
+            <div class="education-date">
+                10/2023 – Present
+            </div>
+
+        </div>
+
+
+        <div class="education-item">
+
+            <div class="education-degree">
+                AI & Data Science Program
+            </div>
+
+            <div class="education-school">
+                MIT IDSS
+            </div>
+
+            <div class="education-date">
+                01/2026 – 05/2026
+            </div>
+
+        </div>
+
+
+        <div class="education-item">
+
+            <div class="education-degree">
+                Bachelor of Science – International Business
+            </div>
+
+            <div class="education-school">
+                Keuka College
+            </div>
+
+            <div class="education-date">
+                10/2015 – 06/2019
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 <!-- =========================
@@ -1214,45 +1193,35 @@
 
     <div class="container">
 
-        <div class="section-number">
-            05 — CONTACT
+        <div class="section-label">
+            Contact
         </div>
 
-        <h2>
-            Let's connect.
+        <h2 class="section-title">
+            Let's connect
         </h2>
 
         <p>
-
             Interested in Data Analytics, Business Intelligence,
-            Consumer Insights or data-driven business solutions?
-            Feel free to get in touch.
-
+            eCommerce Analytics, Consumer Insights or
+            data-driven business solutions?
         </p>
-
 
         <div class="contact-links">
 
-            <!-- CHANGE YOUR EMAIL -->
+            <a href="https://www.linkedin.com/in/nhuydao/"
+               target="_blank"
+               rel="noopener noreferrer">
+                LinkedIn
+            </a>
 
-            <a href="mailto:dao.y1997@gmail.com">
+            <a href="mailto:your-email@gmail.com">
                 Email
             </a>
 
-
-            <!-- CHANGE YOUR LINKEDIN -->
-
-           <a href="https://www.linkedin.com/in/nhuydao/"
-   target="_blank"
-   rel="noopener noreferrer">
-    LinkedIn
-            </a>
-
-
-            <!-- YOUR GITHUB -->
-
             <a href="https://github.com/klexi147"
-               target="_blank">
+               target="_blank"
+               rel="noopener noreferrer">
                 GitHub
             </a>
 
@@ -1263,18 +1232,9 @@
 </section>
 
 
-
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
-    <div class="container">
-
-        © 2026 Dao Ngoc Nhu Y · Data Analytics Portfolio
-
-    </div>
+    © 2026 DAO NGOC NHU Y · Data Analytics & Business Intelligence
 
 </footer>
 
