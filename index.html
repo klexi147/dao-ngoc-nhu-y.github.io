@@ -1,20 +1,20 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dao Ngoc Nhu Y | Data Analytics & BI Portfolio</title>
+    <title>Dao Ngoc Nhu Y | Data Analytics & Business Intelligence</title>
 
     <meta name="description"
-        content="Data Analytics, Business Intelligence and Consumer Insights portfolio of Dao Ngoc Nhu Y.">
-
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+          content="Portfolio of Dao Ngoc Nhu Y — Data Analytics, Business Intelligence, Business Analysis, Customer Analytics and AI projects.">
 
     <style>
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
 
         * {
             box-sizing: border-box;
@@ -32,11 +32,12 @@
                 BlinkMacSystemFont,
                 "Segoe UI",
                 Roboto,
+                Helvetica,
                 Arial,
                 sans-serif;
 
             background: #f7f8fa;
-            color: #1f2937;
+            color: #172033;
             line-height: 1.7;
         }
 
@@ -45,103 +46,134 @@
             text-decoration: none;
         }
 
-        /* =========================
+        .container {
+            width: min(1400px, 92%);
+            margin: 0 auto;
+        }
+
+
+        /* =====================================================
            NAVIGATION
-        ========================= */
+        ===================================================== */
 
         nav {
-            position: fixed;
+            position: sticky;
             top: 0;
-            width: 100%;
             z-index: 1000;
 
-            background: rgba(255,255,255,0.94);
-            backdrop-filter: blur(12px);
+            background: rgba(247, 248, 250, 0.92);
+            backdrop-filter: blur(15px);
 
             border-bottom: 1px solid #e5e7eb;
+        }
+
+        .nav-inner {
+            width: min(1400px, 92%);
+            margin: auto;
 
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            padding: 16px 7%;
+            height: 70px;
         }
 
         .logo {
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            color: #111827;
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: -0.3px;
         }
 
         .nav-links {
             display: flex;
-            gap: 28px;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #667085;
             font-size: 14px;
-            color: #4b5563;
+            font-weight: 600;
+            transition: 0.2s;
         }
 
         .nav-links a:hover {
             color: #111827;
         }
 
-        /* =========================
+
+        /* =====================================================
            HERO
-        ========================= */
+        ===================================================== */
 
         .hero {
-            min-height: 92vh;
-
             position: relative;
+            min-height: 720px;
 
             display: flex;
             align-items: center;
 
-            padding: 120px 8% 80px;
-
-            color: white;
+            overflow: hidden;
 
             background:
                 linear-gradient(
                     90deg,
-                    rgba(10, 15, 25, 0.78) 0%,
-                    rgba(10, 15, 25, 0.55) 42%,
-                    rgba(10, 15, 25, 0.15) 100%
+                    rgba(8, 15, 30, 0.82) 0%,
+                    rgba(8, 15, 30, 0.58) 45%,
+                    rgba(8, 15, 30, 0.18) 100%
                 ),
-                url("images/cover.jpg");
+                url("IMG_6351.HEIC");
 
             background-size: cover;
             background-position: center;
         }
 
         .hero-content {
-            max-width: 760px;
+            position: relative;
+            z-index: 2;
+
+            width: min(1400px, 92%);
+            margin: auto;
+
+            color: white;
+            padding: 90px 0;
         }
 
         .eyebrow {
+            font-size: 13px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 12px;
-            font-weight: 600;
+            font-weight: 700;
+
+            color: rgba(255,255,255,0.72);
+
             margin-bottom: 22px;
-            opacity: 0.85;
         }
 
         .hero h1 {
-            font-size: clamp(42px, 6vw, 76px);
-            line-height: 1.05;
-            margin-bottom: 24px;
-            font-weight: 750;
+            max-width: 850px;
+
+            font-size: clamp(48px, 7vw, 92px);
+            line-height: 0.98;
+
+            letter-spacing: -4px;
+
+            margin-bottom: 30px;
         }
 
         .hero h1 span {
-            color: #dbeafe;
+            color: #dbe5ff;
         }
 
         .hero-description {
-            font-size: 18px;
-            max-width: 650px;
-            color: #e5e7eb;
-            margin-bottom: 32px;
+            max-width: 720px;
+
+            font-size: 19px;
+            line-height: 1.7;
+
+            color: rgba(255,255,255,0.82);
+
+            margin-bottom: 38px;
         }
 
         .hero-buttons {
@@ -150,486 +182,678 @@
             flex-wrap: wrap;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 22px;
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 12px 20px;
+
             border-radius: 999px;
+
             font-size: 14px;
-            font-weight: 600;
-            transition: 0.2s ease;
+            font-weight: 700;
+
+            transition: 0.25s;
         }
 
-        .btn-primary {
+        .button-primary {
             background: white;
             color: #111827;
         }
 
-        .btn-primary:hover {
+        .button-primary:hover {
             transform: translateY(-2px);
         }
 
-        .btn-outline {
-            border: 1px solid rgba(255,255,255,0.6);
+        .button-secondary {
+            border: 1px solid rgba(255,255,255,0.35);
             color: white;
+            background: rgba(255,255,255,0.08);
         }
 
-        .btn-outline:hover {
-            background: rgba(255,255,255,0.12);
+        .button-secondary:hover {
+            background: rgba(255,255,255,0.16);
         }
 
-        /* =========================
-           GENERAL SECTIONS
-        ========================= */
+
+        /* =====================================================
+           SECTION
+        ===================================================== */
 
         section {
-            padding: 95px 8%;
+            padding: 110px 0;
         }
 
         .section-label {
+            color: #667085;
+
             font-size: 12px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #6b7280;
-            font-weight: 700;
-            margin-bottom: 12px;
+
+            font-weight: 800;
+
+            margin-bottom: 20px;
         }
 
         .section-title {
-            font-size: 38px;
-            line-height: 1.2;
-            margin-bottom: 18px;
-            color: #111827;
+            font-size: clamp(36px, 5vw, 62px);
+            letter-spacing: -2.5px;
+            line-height: 1.05;
+
+            margin-bottom: 25px;
         }
 
-        .section-description {
-            max-width: 720px;
-            color: #6b7280;
-            margin-bottom: 45px;
+        .section-intro {
+            max-width: 760px;
+
+            color: #667085;
+            font-size: 17px;
+
+            margin-bottom: 55px;
         }
 
-        /* =========================
+
+        /* =====================================================
            ABOUT
-        ========================= */
-
-        .about {
-            background: white;
-        }
+        ===================================================== */
 
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            max-width: 1200px;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 80px;
+
+            align-items: start;
         }
 
         .about-text {
-            color: #4b5563;
-            font-size: 16px;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #4b5565;
         }
 
         .about-text strong {
-            color: #111827;
+            color: #172033;
+        }
+
+        .focus-box {
+            background: white;
+            border: 1px solid #e7e9ee;
+            border-radius: 24px;
+
+            padding: 30px;
+
+            box-shadow: 0 15px 45px rgba(15, 23, 42, 0.05);
+        }
+
+        .focus-box h3 {
+            margin-bottom: 20px;
         }
 
         .focus-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            list-style: none;
         }
 
-        .focus-item {
-            background: #f8fafc;
-            border: 1px solid #e5e7eb;
-            padding: 20px;
-            border-radius: 12px;
+        .focus-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eef0f4;
+
+            color: #667085;
         }
 
-        .focus-item i {
-            font-size: 20px;
-            margin-bottom: 10px;
-            display: block;
+        .focus-list li:last-child {
+            border-bottom: none;
         }
 
-        .focus-item h3 {
-            font-size: 15px;
-            margin-bottom: 5px;
-        }
 
-        .focus-item p {
-            font-size: 13px;
-            color: #6b7280;
-        }
-
-        /* =========================
+        /* =====================================================
            PROJECTS
-        ========================= */
+        ===================================================== */
 
-        .projects {
-            background: #f7f8fa;
+        .projects-section {
+            background: #ffffff;
         }
 
-        .project-grid {
+        .projects-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 28px;
-            max-width: 1250px;
+
+            /*
+             * 4 PROJECTS ON ONE ROW
+             */
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
+
+            gap: 18px;
+
+            align-items: start;
         }
 
         .project-card {
-            background: white;
+            background: #f8f9fb;
+
             border: 1px solid #e5e7eb;
-            border-radius: 18px;
+
+            border-radius: 22px;
 
             overflow: hidden;
 
             transition:
                 transform 0.25s ease,
-                box-shadow 0.25s ease;
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
+
+            border-color: #d8dce5;
 
             box-shadow:
-                0 18px 45px rgba(15, 23, 42, 0.09);
+                0 25px 55px rgba(15, 23, 42, 0.10);
         }
 
         .project-top {
-            padding: 30px 30px 25px;
+            padding: 27px 25px 20px;
         }
 
         .project-number {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 24px;
+        }
+
+        .number {
+            color: #98a2b3;
+
             font-size: 12px;
-            color: #9ca3af;
+            font-weight: 800;
             letter-spacing: 2px;
-            font-weight: 700;
         }
 
         .status {
-            display: inline-block;
-
-            font-size: 11px;
-            font-weight: 700;
-
-            padding: 5px 10px;
+            padding: 7px 12px;
 
             border-radius: 999px;
 
-            margin-left: 8px;
+            background: #eef0f4;
 
-            background: #f3f4f6;
-            color: #4b5563;
+            color: #536174;
+
+            font-size: 10px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
         }
 
         .project-card h3 {
-            margin-top: 15px;
             font-size: 23px;
-            line-height: 1.25;
-            color: #111827;
+            line-height: 1.2;
+
+            letter-spacing: -0.8px;
+
+            margin-bottom: 17px;
         }
 
-        .project-purpose {
-            color: #6b7280;
-            margin-top: 12px;
+        .project-summary {
+            color: #667085;
+
             font-size: 14px;
+            line-height: 1.65;
+
+            min-height: 95px;
         }
 
-        .tools {
+        .tags {
             display: flex;
             flex-wrap: wrap;
+
             gap: 7px;
+
             margin-top: 20px;
         }
 
-        .tool {
-            font-size: 11px;
-            padding: 5px 9px;
-            background: #f3f4f6;
-            border-radius: 6px;
-            color: #4b5563;
+        .tag {
+            background: white;
+
+            border: 1px solid #e7e9ee;
+
+            padding: 6px 9px;
+
+            border-radius: 8px;
+
+            color: #596579;
+
+            font-size: 10px;
+            font-weight: 700;
         }
 
-        .project-result {
-            margin-top: 22px;
 
+        /* =====================================================
+           PROJECT METRICS
+        ===================================================== */
+
+        .metrics {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
 
-            gap: 10px;
+            gap: 8px;
+
+            margin-top: 25px;
         }
 
-        .result {
-            background: #f8fafc;
-            padding: 13px;
-            border-radius: 9px;
+        .metric {
+            background: white;
+
+            border: 1px solid #eef0f4;
+
+            border-radius: 12px;
+
+            padding: 14px 10px;
         }
 
-        .result-number {
-            font-size: 20px;
-            font-weight: 750;
-            color: #111827;
+        .metric strong {
+            display: block;
+
+            font-size: 18px;
+
+            letter-spacing: -0.5px;
         }
 
-        .result-label {
-            font-size: 10px;
-            color: #6b7280;
+        .metric span {
+            display: block;
+
+            color: #8b95a7;
+
+            font-size: 9px;
             line-height: 1.3;
+
+            margin-top: 3px;
         }
 
-        /* =========================
-           EXPAND AREA
-        ========================= */
 
-        details {
-            border-top: 1px solid #e5e7eb;
-        }
+        /* =====================================================
+           EXPAND BUTTON
+        ===================================================== */
 
-        summary {
-            list-style: none;
-            cursor: pointer;
+        .project-expand {
+            width: 100%;
 
-            padding: 18px 30px;
+            border: none;
+            border-top: 1px solid #e3e6eb;
 
-            font-size: 13px;
-            font-weight: 700;
+            background: white;
 
-            color: #374151;
+            padding: 17px 25px;
 
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
 
-        summary::-webkit-details-marker {
-            display: none;
-        }
+            cursor: pointer;
 
-        summary::after {
-            content: "+";
-            font-size: 20px;
-            font-weight: 400;
-        }
-
-        details[open] summary::after {
-            content: "−";
-        }
-
-        .project-detail {
-            padding: 0 30px 30px;
-            color: #4b5563;
-            font-size: 14px;
-        }
-
-        .detail-section {
-            margin-top: 24px;
-        }
-
-        .detail-section h4 {
             font-size: 13px;
+            font-weight: 800;
+
+            color: #172033;
+
+            transition: 0.2s;
+        }
+
+        .project-expand:hover {
+            background: #f5f6f8;
+        }
+
+        .plus {
+            font-size: 24px;
+            font-weight: 300;
+
+            transition: transform 0.25s;
+        }
+
+        .project-card.active .plus {
+            transform: rotate(45deg);
+        }
+
+        .project-details {
+            display: none;
+
+            padding: 0 25px 28px;
+
+            background: white;
+
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .project-card.active .project-details {
+            display: block;
+        }
+
+        .project-details h4 {
+            margin-top: 25px;
+            margin-bottom: 8px;
+
+            font-size: 12px;
+
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #111827;
-            margin-bottom: 8px;
+            letter-spacing: 1.5px;
+
+            color: #536174;
         }
 
-        .detail-section p {
-            margin-bottom: 8px;
+        .project-details p,
+        .project-details li {
+            color: #667085;
+
+            font-size: 13px;
+
+            line-height: 1.7;
         }
 
-        .detail-section ul {
-            padding-left: 20px;
+        .project-details ul {
+            padding-left: 18px;
         }
 
-        .detail-section li {
-            margin-bottom: 5px;
-        }
 
-        .insight-box {
-            margin-top: 20px;
-            padding: 18px;
-
-            border-left: 3px solid #111827;
-
-            background: #f8fafc;
-        }
-
-        .insight-box strong {
-            color: #111827;
-        }
-
-        /* =========================
+        /* =====================================================
            EXPERIENCE
-        ========================= */
+        ===================================================== */
 
         .experience {
-            background: white;
-        }
-
-        .timeline {
-            max-width: 1000px;
-        }
-
-        .job {
-            border-left: 2px solid #e5e7eb;
-            padding: 0 0 40px 30px;
-            position: relative;
-        }
-
-        .job::before {
-            content: "";
-            position: absolute;
-            left: -6px;
-            top: 5px;
-
-            width: 10px;
-            height: 10px;
-
-            border-radius: 50%;
-            background: #111827;
-        }
-
-        .job-date {
-            font-size: 12px;
-            color: #9ca3af;
-            margin-bottom: 5px;
-        }
-
-        .job h3 {
-            font-size: 20px;
-            margin-bottom: 4px;
-        }
-
-        .job-company {
-            color: #6b7280;
-            margin-bottom: 10px;
-        }
-
-        .job p {
-            color: #6b7280;
-            font-size: 14px;
-        }
-
-        /* =========================
-           SKILLS
-        ========================= */
-
-        .skills {
             background: #f7f8fa;
         }
 
+        .experience-list {
+            max-width: 1100px;
+        }
+
+        .experience-item {
+            display: grid;
+
+            grid-template-columns: 220px 1fr;
+
+            gap: 55px;
+
+            padding: 38px 0;
+
+            border-top: 1px solid #e0e3e8;
+        }
+
+        .experience-item:last-child {
+            border-bottom: 1px solid #e0e3e8;
+        }
+
+        .experience-date {
+            color: #8b95a7;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            padding-top: 5px;
+        }
+
+        .experience-role {
+            font-size: 25px;
+
+            letter-spacing: -0.8px;
+
+            margin-bottom: 5px;
+        }
+
+        .experience-company {
+            color: #667085;
+
+            font-size: 14px;
+
+            margin-bottom: 22px;
+        }
+
+        .experience-description {
+            color: #596579;
+
+            font-size: 15px;
+
+            margin-bottom: 18px;
+        }
+
+        .experience-bullets {
+            padding-left: 19px;
+        }
+
+        .experience-bullets li {
+            color: #667085;
+
+            font-size: 14px;
+
+            margin-bottom: 9px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           SKILLS
+        ===================================================== */
+
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            max-width: 1100px;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
         }
 
         .skill-card {
             background: white;
-            padding: 25px;
-            border-radius: 14px;
+
             border: 1px solid #e5e7eb;
+
+            border-radius: 20px;
+
+            padding: 28px;
         }
 
         .skill-card h3 {
             font-size: 15px;
-            margin-bottom: 12px;
+
+            margin-bottom: 15px;
         }
 
         .skill-card p {
-            font-size: 13px;
-            color: #6b7280;
+            color: #667085;
+
+            font-size: 14px;
+
+            line-height: 1.8;
         }
 
-        /* =========================
+
+        /* =====================================================
+           EDUCATION
+        ===================================================== */
+
+        .education-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .education-card {
+            background: white;
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 20px;
+
+            padding: 30px;
+        }
+
+        .education-card h3 {
+            font-size: 20px;
+
+            margin-bottom: 7px;
+        }
+
+        .education-card p {
+            color: #667085;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
            CONTACT
-        ========================= */
+        ===================================================== */
 
         .contact {
             background: #111827;
+
             color: white;
+
             text-align: center;
         }
 
         .contact .section-label {
-            color: #9ca3af;
+            color: #98a2b3;
         }
 
-        .contact .section-title {
-            color: white;
+        .contact h2 {
+            font-size: clamp(40px, 6vw, 76px);
+
+            letter-spacing: -3px;
+
+            line-height: 1;
+
+            margin-bottom: 25px;
         }
 
         .contact p {
-            color: #9ca3af;
             max-width: 600px;
-            margin: 0 auto 30px;
+
+            margin: auto auto 30px;
+
+            color: #aeb6c4;
         }
 
         .contact-links {
             display: flex;
+
             justify-content: center;
-            gap: 25px;
+
+            gap: 12px;
+
             flex-wrap: wrap;
         }
 
         .contact-links a {
-            color: white;
-            font-size: 14px;
+            border: 1px solid #374151;
+
+            padding: 10px 17px;
+
+            border-radius: 999px;
+
+            font-size: 13px;
+
+            transition: 0.2s;
         }
 
         .contact-links a:hover {
-            text-decoration: underline;
+            background: #1f2937;
         }
 
-        /* =========================
+
+        /* =====================================================
            FOOTER
-        ========================= */
+        ===================================================== */
 
         footer {
             background: #111827;
-            border-top: 1px solid #374151;
-            padding: 25px 8%;
+
+            border-top: 1px solid #293241;
+
+            padding: 25px 0;
+
             text-align: center;
-            color: #6b7280;
+
+            color: #667085;
+
             font-size: 12px;
         }
 
-        /* =========================
-           RESPONSIVE
-        ========================= */
 
-        @media (max-width: 850px) {
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1150px) {
+
+            .projects-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 800px) {
 
             .nav-links {
                 display: none;
             }
 
             .hero {
-                min-height: 85vh;
-                padding: 110px 7% 60px;
+                min-height: 650px;
             }
 
             .hero h1 {
-                font-size: 48px;
+                letter-spacing: -2px;
             }
 
             .about-grid,
-            .project-grid,
+            .education-grid,
             .skills-grid {
                 grid-template-columns: 1fr;
             }
 
-            .focus-list {
+            .experience-item {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+        }
+
+
+        @media (max-width: 620px) {
+
+            section {
+                padding: 75px 0;
+            }
+
+            .projects-grid {
                 grid-template-columns: 1fr;
             }
 
-            section {
-                padding: 70px 7%;
+            .hero-content {
+                padding: 70px 0;
             }
 
-            .project-result {
-                grid-template-columns: repeat(3, 1fr);
+            .hero h1 {
+                font-size: 50px;
             }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
         }
 
     </style>
@@ -639,27 +863,33 @@
 <body>
 
 
-<!-- =========================
+<!-- =========================================================
      NAVIGATION
-========================= -->
+========================================================= -->
 
 <nav>
 
-    <div class="logo">
-        DAO NGOC NHU Y
-    </div>
+    <div class="nav-inner">
 
-    <div class="nav-links">
+        <a href="#home" class="logo">
+            DAO NGOC NHU Y
+        </a>
 
-        <a href="#about">About</a>
+        <div class="nav-links">
 
-        <a href="#projects">Projects</a>
+            <a href="#about">About</a>
 
-        <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
 
-        <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
 
-        <a href="#contact">Contact</a>
+            <a href="#skills">Skills</a>
+
+            <a href="#education">Education</a>
+
+            <a href="#contact">Contact</a>
+
+        </div>
 
     </div>
 
@@ -667,43 +897,46 @@
 
 
 
-<!-- =========================
+<!-- =========================================================
      HERO
-========================= -->
+========================================================= -->
 
-<header class="hero">
+<header class="hero" id="home">
 
     <div class="hero-content">
 
         <div class="eyebrow">
-            Data Analytics · Business Intelligence · Consumer Insights
+            Data Analytics · Business Intelligence · Business Analysis
         </div>
 
         <h1>
-            Turning business data
-            <span>into actionable insights.</span>
+            From data<br>
+            to <span>business insight.</span>
         </h1>
 
         <p class="hero-description">
-
             Data Analytics and Business Intelligence professional with
-            experience across Sales, Commercial, Finance, Operations,
-            digital channels and business transformation.
-
+            5+ years of experience across business performance analytics,
+            consulting, requirements analysis and data-driven reporting.
         </p>
 
         <div class="hero-buttons">
 
             <a href="#projects"
-               class="btn btn-primary">
+               class="button button-primary">
                 Explore Projects
             </a>
 
             <a href="https://www.linkedin.com/in/nhuydao/"
                target="_blank"
-               rel="noopener"
-               class="btn btn-outline">
+               rel="noopener noreferrer"
+               class="button button-secondary">
                 LinkedIn
+            </a>
+
+            <a href="#contact"
+               class="button button-secondary">
+                Contact
             </a>
 
         </div>
@@ -714,103 +947,1160 @@
 
 
 
-<!-- =========================
+<!-- =========================================================
      ABOUT
-========================= -->
+========================================================= -->
 
-<section id="about" class="about">
+<section id="about">
 
-    <div class="section-label">
-        About
-    </div>
+    <div class="container">
 
-    <h2 class="section-title">
-        Data, business and technology.
-    </h2>
+        <div class="section-label">
+            About
+        </div>
 
-    <div class="about-grid">
+        <div class="about-grid">
 
-        <div class="about-text">
+            <div>
 
-            <p>
-                I work at the intersection of
-                <strong>business requirements, data analytics and
-                technology implementation</strong>.
-            </p>
+                <h2 class="section-title">
+                    Data, business<br>
+                    and implementation.
+                </h2>
 
-            <br>
+                <p class="about-text">
 
-            <p>
-                My experience combines Business Intelligence,
-                reporting automation, SAP and data integration with
-                business analysis and consulting.
-            </p>
+                    I work at the intersection of
+                    <strong>data analytics, business intelligence
+                    and business analysis</strong>.
 
-            <br>
+                    My experience combines reporting and dashboard
+                    development with requirements engineering,
+                    stakeholder management and software implementation.
 
-            <p>
-                My current work focuses on transforming data from
-                multiple business sources into reporting solutions
-                and insights that support commercial and operational
-                decision-making.
-            </p>
+                    I enjoy turning complex business requirements
+                    and fragmented data sources into structured,
+                    usable solutions that support decision-making.
+
+                </p>
+
+            </div>
+
+
+            <div class="focus-box">
+
+                <h3>
+                    Current focus
+                </h3>
+
+                <ul class="focus-list">
+
+                    <li>
+                        Data Analytics & Business Intelligence
+                    </li>
+
+                    <li>
+                        Power BI & Reporting Automation
+                    </li>
+
+                    <li>
+                        Customer & Consumer Analytics
+                    </li>
+
+                    <li>
+                        Business Analysis & Requirements Engineering
+                    </li>
+
+                    <li>
+                        AI / Machine Learning Applications
+                    </li>
+
+                    <li>
+                        SAP & Data Integration
+                    </li>
+
+                </ul>
+
+            </div>
 
         </div>
 
+    </div>
 
-        <div class="focus-list">
+</section>
 
-            <div class="focus-item">
 
-                <i class="bi bi-bar-chart-line"></i>
 
-                <h3>Data Analytics</h3>
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section id="projects"
+         class="projects-section">
+
+    <div class="container">
+
+        <div class="section-label">
+            Selected Projects
+        </div>
+
+        <h2 class="section-title">
+            From data to business insight.
+        </h2>
+
+        <p class="section-intro">
+
+            Selected analytics projects demonstrating customer analytics,
+            machine learning, segmentation, recommendation systems
+            and multilingual consumer insights.
+
+        </p>
+
+
+        <!-- ================= PROJECT GRID ================= -->
+
+        <div class="projects-grid">
+
+
+            <!-- =================================================
+                 PROJECT 01
+            ================================================== -->
+
+            <article class="project-card">
+
+                <div class="project-top">
+
+                    <div class="project-number">
+
+                        <span class="number">
+                            01
+                        </span>
+
+                        <span class="status">
+                            ONGOING
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Voice-of-Customer Analytics –
+                        Multilingual Social Listening Pipeline
+                    </h3>
+
+
+                    <p class="project-summary">
+
+                        Analyze multilingual consumer feedback
+                        across Germany, UK, Netherlands and the US
+                        to identify recurring pain points, product
+                        topics and feature requests.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">Python</span>
+
+                        <span class="tag">
+                            YouTube Data API
+                        </span>
+
+                        <span class="tag">
+                            Claude API
+                        </span>
+
+                        <span class="tag">
+                            BERTopic
+                        </span>
+
+                        <span class="tag">
+                            Hugging Face
+                        </span>
+
+                    </div>
+
+
+                    <div class="metrics">
+
+                        <div class="metric">
+                            <strong>7,500+</strong>
+                            <span>
+                                Public records
+                            </span>
+                        </div>
+
+                        <div class="metric">
+                            <strong>4</strong>
+                            <span>
+                                Markets
+                            </span>
+                        </div>
+
+                        <div class="metric">
+                            <strong>3</strong>
+                            <span>
+                                Languages
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button class="project-expand"
+                        onclick="toggleProject(this)">
+
+                    <span>
+                        View project details
+                    </span>
+
+                    <span class="plus">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="project-details">
+
+                    <h4>
+                        Objective
+                    </h4>
+
+                    <p>
+                        Build a multilingual social listening pipeline
+                        to transform unstructured consumer-generated
+                        content into structured consumer insights.
+                    </p>
+
+
+                    <h4>
+                        Data & Approach
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            Collected 7,500+ public YouTube records
+                            across DE, UK, NL and US.
+                        </li>
+
+                        <li>
+                            Applied deduplication, language detection
+                            and translation for cross-market comparison.
+                        </li>
+
+                        <li>
+                            Designed relevance scoring to filter
+                            noisy search results.
+                        </li>
+
+                        <li>
+                            Used LLM-assisted processing to structure
+                            pain points, praise and feature requests.
+                        </li>
+
+                        <li>
+                            Applied topic modelling and clustering
+                            to identify recurring consumer themes.
+                        </li>
+
+                    </ul>
+
+
+                    <h4>
+                        Validation & Limitations
+                    </h4>
+
+                    <p>
+                        AI outputs were audited rather than treated
+                        as ground truth. Data leakage and unsuitable
+                        sentiment-model behaviour were identified,
+                        corrected and documented.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PROJECT 02
+            ================================================== -->
+
+            <article class="project-card">
+
+                <div class="project-top">
+
+                    <div class="project-number">
+
+                        <span class="number">
+                            02
+                        </span>
+
+                        <span class="status">
+                            COMPLETED
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Customer Personality Segmentation
+                        & Marketing Analytics
+                    </h3>
+
+
+                    <p class="project-summary">
+
+                        Segment 2,240 customers based on demographics,
+                        spending, purchasing behaviour and campaign
+                        response to support targeted marketing and
+                        customer retention.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            Python
+                        </span>
+
+                        <span class="tag">
+                            K-Means
+                        </span>
+
+                        <span class="tag">
+                            scikit-learn
+                        </span>
+
+                        <span class="tag">
+                            pandas
+                        </span>
+
+                    </div>
+
+
+                    <div class="metrics">
+
+                        <div class="metric">
+                            <strong>2,240</strong>
+                            <span>
+                                Customers
+                            </span>
+                        </div>
+
+                        <div class="metric">
+                            <strong>29</strong>
+                            <span>
+                                Features
+                            </span>
+                        </div>
+
+                        <div class="metric">
+                            <strong>4</strong>
+                            <span>
+                                Segments
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button class="project-expand"
+                        onclick="toggleProject(this)">
+
+                    <span>
+                        View project details
+                    </span>
+
+                    <span class="plus">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="project-details">
+
+                    <h4>
+                        Objective
+                    </h4>
+
+                    <p>
+                        Identify meaningful customer groups based on
+                        purchasing behaviour, spending patterns and
+                        campaign response.
+                    </p>
+
+
+                    <h4>
+                        Data Preparation
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            Analysed 2,240 customers across 29 features.
+                        </li>
+
+                        <li>
+                            Applied median imputation for missing income.
+                        </li>
+
+                        <li>
+                            Created customer tenure and date-based
+                            features.
+                        </li>
+
+                        <li>
+                            Applied log transformation to skewed
+                            spending and income variables.
+                        </li>
+
+                    </ul>
+
+
+                    <h4>
+                        Modelling
+                    </h4>
+
+                    <p>
+                        Applied K-Means clustering and evaluated
+                        alternative cluster structures using the
+                        elbow method and silhouette analysis.
+                        A four-cluster solution was selected as a
+                        balance between statistical separation and
+                        business interpretability.
+                    </p>
+
+
+                    <h4>
+                        Business Result
+                    </h4>
+
+                    <p>
+                        Identified distinct customer profiles ranging
+                        from moderate purchasers to high-value and
+                        luxury-oriented customers, supporting
+                        differentiated promotion, loyalty and
+                        personalised marketing strategies.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PROJECT 03
+            ================================================== -->
+
+            <article class="project-card">
+
+                <div class="project-top">
+
+                    <div class="project-number">
+
+                        <span class="number">
+                            03
+                        </span>
+
+                        <span class="status">
+                            COMPLETED
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Customer Behavior & Product
+                        Recommendation – Amazon Electronics
+                    </h3>
+
+
+                    <p class="project-summary">
+
+                        Analyse 7.8M+ product-rating interactions
+                        and develop personalised recommendation
+                        models to improve product relevance.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            Python
+                        </span>
+
+                        <span class="tag">
+                            Collaborative Filtering
+                        </span>
+
+                        <span class="tag">
+                            SVD
+                        </span>
+
+                        <span class="tag">
+                            GridSearchCV
+                        </span>
+
+                    </div>
+
+
+                    <div class="metrics">
+
+                        <div class="metric">
+                            <strong>7.8M+</strong>
+                            <span>
+                                Interactions
+                            </span>
+                        </div>
+
+                        <div class="metric">
+                            <strong>0.97</strong>
+                            <span>
+                                RMSE
+                            </span>
+                        </div>
+
+                        <div class="metric">
+                            <strong>0.77</strong>
+                            <span>
+                                F1-score
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button class="project-expand"
+                        onclick="toggleProject(this)">
+
+                    <span>
+                        View project details
+                    </span>
+
+                    <span class="plus">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="project-details">
+
+                    <h4>
+                        Objective
+                    </h4>
+
+                    <p>
+                        Develop recommendation approaches based on
+                        historical customer-product interactions
+                        to support personalised product discovery.
+                    </p>
+
+
+                    <h4>
+                        Modelling
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            Compared rank-based recommendations,
+                            user-user collaborative filtering,
+                            item-item collaborative filtering
+                            and SVD matrix factorisation.
+                        </li>
+
+                        <li>
+                            Tuned model parameters using
+                            GridSearchCV.
+                        </li>
+
+                        <li>
+                            Evaluated models using RMSE,
+                            Precision@10, Recall@10 and F1-score.
+                        </li>
+
+                    </ul>
+
+
+                    <h4>
+                        Result
+                    </h4>
+
+                    <p>
+                        Selected an optimised SVD model with
+                        RMSE of approximately 0.97 and F1-score
+                        of approximately 0.77, providing a basis
+                        for personalised product recommendations.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PROJECT 04
+            ================================================== -->
+
+            <article class="project-card">
+
+                <div class="project-top">
+
+                    <div class="project-number">
+
+                        <span class="number">
+                            04
+                        </span>
+
+                        <span class="status">
+                            COMPLETED
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Customer Behavior & Conversion
+                        Analytics – ExtraaLearn
+                    </h3>
+
+
+                    <p class="project-summary">
+
+                        Analyse 4,612 leads and build predictive
+                        models to identify conversion drivers
+                        and support lead prioritisation.
+
+                    </p>
+
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            Python
+                        </span>
+
+                        <span class="tag">
+                            Decision Tree
+                        </span>
+
+                        <span class="tag">
+                            Random Forest
+                        </span>
+
+                        <span class="tag">
+                            scikit-learn
+                        </span>
+
+                    </div>
+
+
+                    <div class="metrics">
+
+                        <div class="metric">
+                            <strong>4,612</strong>
+                            <span>
+                                Leads
+                            </span>
+                        </div>
+
+                        <div class="metric">
+                            <strong>0.92</strong>
+                            <span>
+                                ROC-AUC
+                            </span>
+                        </div>
+
+                        <div class="metric">
+                            <strong>0.77</strong>
+                            <span>
+                                F1-score
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button class="project-expand"
+                        onclick="toggleProject(this)">
+
+                    <span>
+                        View project details
+                    </span>
+
+                    <span class="plus">
+                        +
+                    </span>
+
+                </button>
+
+
+                <div class="project-details">
+
+                    <h4>
+                        Objective
+                    </h4>
+
+                    <p>
+                        Identify behavioural and demographic factors
+                        associated with lead conversion and develop
+                        models to support lead prioritisation.
+                    </p>
+
+
+                    <h4>
+                        Analysis
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            Analysed 4,612 lead records.
+                        </li>
+
+                        <li>
+                            Investigated website engagement,
+                            interaction channels, occupation,
+                            profile completion and referral behaviour.
+                        </li>
+
+                        <li>
+                            Addressed class imbalance and compared
+                            Decision Tree and Random Forest models.
+                        </li>
+
+                    </ul>
+
+
+                    <h4>
+                        Result
+                    </h4>
+
+                    <p>
+                        The tuned Random Forest achieved a ROC-AUC
+                        of approximately 0.92. Feature importance
+                        highlighted website engagement, first
+                        interaction channel and page views as key
+                        predictive factors.
+                    </p>
+
+
+                    <h4>
+                        Business Application
+                    </h4>
+
+                    <p>
+                        Findings can support lead prioritisation,
+                        website optimisation, customer targeting
+                        and marketing channel allocation.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     EXPERIENCE
+========================================================= -->
+
+<section id="experience"
+         class="experience">
+
+    <div class="container">
+
+        <div class="section-label">
+            Experience
+        </div>
+
+        <h2 class="section-title">
+            Professional experience.
+        </h2>
+
+        <p class="section-intro">
+
+            Experience across data analytics, business intelligence,
+            consulting, business analysis and system implementation.
+
+        </p>
+
+
+        <div class="experience-list">
+
+
+            <!-- BSH -->
+
+            <div class="experience-item">
+
+                <div class="experience-date">
+                    05/2026 — Present
+                </div>
+
+                <div>
+
+                    <h3 class="experience-role">
+                        Data Analytics in Global Sales —
+                        Working Student
+                    </h3>
+
+                    <div class="experience-company">
+                        BSH Hausgeräte GmbH · Munich
+                    </div>
+
+                    <ul class="experience-bullets">
+
+                        <li>
+                            Integrated data from Adobe Analytics,
+                            SAP Datasphere, partner reports
+                            (MOPOS, eStore, Dataroma, GfK) and
+                            internal sources into Power BI reporting
+                            solutions.
+                        </li>
+
+                        <li>
+                            Worked with stakeholders to define,
+                            harmonise and monitor KPI logic,
+                            ensuring consistent reporting definitions
+                            across global sales and eCommerce-related
+                            use cases.
+                        </li>
+
+                        <li>
+                            Prepared and analysed business and
+                            performance data using Power Query
+                            and Excel/VBA; automated recurring
+                            reporting and data preparation tasks
+                            with Power Automate and Power BI Service.
+                        </li>
+
+                        <li>
+                            Developed, maintained and enhanced
+                            7+ Power BI dashboards covering
+                            E-commerce, Marketing Campaigns,
+                            Sales, SPC, Business Plan,
+                            Pricing & Assortment and D2C
+                            commercial performance.
+                        </li>
+
+                        <li>
+                            Conducted ad-hoc data research,
+                            KPI analysis and visualisation to
+                            support business questions and
+                            commercial reporting.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BEONE -->
+
+            <div class="experience-item">
+
+                <div class="experience-date">
+                    04/2022 — 08/2023
+                </div>
+
+                <div>
+
+                    <h3 class="experience-role">
+                        Lead Consultant
+                    </h3>
+
+                    <div class="experience-company">
+                        BEONE Solution Consulting & Support Services
+                        · Ho Chi Minh City
+                    </div>
+
+                    <ul class="experience-bullets">
+
+                        <li>
+                            Led end-to-end project scoping and
+                            requirements workshops with clients,
+                            Sales, Finance and Operations.
+                        </li>
+
+                        <li>
+                            Translated business requirements into
+                            BRD/BRFD, BPMN/UML, SOW, project
+                            milestones, deliverables and
+                            implementation plans.
+                        </li>
+
+                        <li>
+                            Designed reporting automation workflows
+                            covering data import, transformation
+                            and report generation.
+                        </li>
+
+                        <li>
+                            Built client reporting solutions using
+                            advanced SQL, SAP HANA, Power BI
+                            and Crystal Reports.
+                        </li>
+
+                        <li>
+                            Coordinated UAT, Pilot, Mass Rollout
+                            and Go-live activities and supported
+                            project handover.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ICC -->
+
+            <div class="experience-item">
+
+                <div class="experience-date">
+                    02/2021 — 03/2022
+                </div>
+
+                <div>
+
+                    <h3 class="experience-role">
+                        Business Analyst
+                    </h3>
+
+                    <div class="experience-company">
+                        ICC VN — Innovative Solution Consulting Service
+                    </div>
+
+                    <ul class="experience-bullets">
+
+                        <li>
+                            Conducted requirements workshops with
+                            Sales, Operations and Finance stakeholders
+                            and translated business needs into
+                            BRD/BRFD and process documentation.
+                        </li>
+
+                        <li>
+                            Coordinated solution development,
+                            integration validation and API testing
+                            using Postman.
+                        </li>
+
+                        <li>
+                            Prepared test data, training materials
+                            and user guidelines and supported
+                            UAT, Pilot, Mass Rollout and Go-live.
+                        </li>
+
+                        <li>
+                            Developed Power BI dashboards and
+                            automated Excel reporting using
+                            Power Query, DAX and SQL.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- JACCS -->
+
+            <div class="experience-item">
+
+                <div class="experience-date">
+                    04/2019 — 10/2020
+                </div>
+
+                <div>
+
+                    <h3 class="experience-role">
+                        HR System Transformation Assistant
+                    </h3>
+
+                    <div class="experience-company">
+                        JACCS International Vietnam Finance
+                    </div>
+
+                    <ul class="experience-bullets">
+
+                        <li>
+                            Supported a six-month HRM transformation
+                            project covering approximately 2,000 employees.
+                        </li>
+
+                        <li>
+                            Supported requirements and functional
+                            specifications with HR and IT stakeholders.
+                        </li>
+
+                        <li>
+                            Validated existing Excel-based processes
+                            against the HRM system and supported
+                            UAT and rollout.
+                        </li>
+
+                        <li>
+                            Coordinated with IT vendors and supported
+                            system operations and user guidance.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     TECHNICAL SKILLS
+========================================================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-label">
+            Technical Skills
+        </div>
+
+        <h2 class="section-title">
+            Tools & capabilities.
+        </h2>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Data & BI
+                </h3>
 
                 <p>
-                    Business performance, customer behavior,
-                    segmentation and predictive analytics.
+                    Power BI, DAX, Power Query,
+                    Power BI Service, SQL, Python,
+                    Excel, VBA, Crystal Reports
                 </p>
 
             </div>
 
 
-            <div class="focus-item">
+            <div class="skill-card">
 
-                <i class="bi bi-grid-1x2"></i>
-
-                <h3>Business Intelligence</h3>
+                <h3>
+                    SAP & Data
+                </h3>
 
                 <p>
-                    Power BI dashboards, KPI design,
-                    reporting automation and data integration.
+                    SAP HANA, SAP Business One,
+                    SAP Datasphere, SAP BW,
+                    ETL / Data Integration
                 </p>
 
             </div>
 
 
-            <div class="focus-item">
+            <div class="skill-card">
 
-                <i class="bi bi-people"></i>
-
-                <h3>Business Analysis</h3>
+                <h3>
+                    Business Analysis
+                </h3>
 
                 <p>
-                    Requirements engineering, process design,
-                    UAT and stakeholder coordination.
+                    Requirements Engineering,
+                    BRD/BRFD, BPMN, UML, UAT,
+                    Process Design, Stakeholder Management,
+                    Project Coordination
                 </p>
 
             </div>
 
 
-            <div class="focus-item">
+            <div class="skill-card">
 
-                <i class="bi bi-database"></i>
-
-                <h3>Data & SAP</h3>
+                <h3>
+                    Analytics & Machine Learning
+                </h3>
 
                 <p>
-                    SQL, SAP HANA, SAP Datasphere,
-                    ETL and reporting data structures.
+                    pandas, scikit-learn, K-Means,
+                    Decision Trees, Random Forest,
+                    Collaborative Filtering, SVD
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Customer & Consumer Analytics
+                </h3>
+
+                <p>
+                    Customer Segmentation,
+                    Conversion Analytics,
+                    Recommendation Systems,
+                    Voice-of-Customer,
+                    Social Listening
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <h3>
+                    Data Sources & Platforms
+                </h3>
+
+                <p>
+                    Adobe Analytics, YouTube Data API,
+                    SAP Datasphere, GfK,
+                    partner reports and internal data sources
                 </p>
 
             </div>
@@ -823,174 +2113,171 @@
 
 
 
-<!-- =========================
-     PROJECTS
-========================= -->
+<!-- =========================================================
+     EDUCATION
+========================================================= -->
 
-<section id="projects" class="projects">
+<section id="education">
 
-    <div class="section-label">
-        Selected Projects
-    </div>
+    <div class="container">
 
-    <h2 class="section-title">
-        From data to business insight.
-    </h2>
+        <div class="section-label">
+            Education
+        </div>
 
-    <p class="section-description">
-
-        Selected analytics projects demonstrating customer analytics,
-        machine learning, segmentation, recommendation systems and
-        multilingual consumer insights.
-
-    </p>
+        <h2 class="section-title">
+            Academic background.
+        </h2>
 
 
+        <div class="education-grid">
 
-    <div class="project-grid">
 
-
-        <!-- PROJECT 01 -->
-
-        <article class="project-card">
-
-            <div class="project-top">
-
-                <div class="project-number">
-                    01
-                    <span class="status">ONGOING</span>
-                </div>
+            <div class="education-card">
 
                 <h3>
-                    Voice-of-Customer Analytics –
-                    Multilingual Social Listening Pipeline
+                    M.A. International Business & Economics
                 </h3>
 
-                <p class="project-purpose">
-
-                    Analyze multilingual consumer feedback across
-                    Germany, UK, Netherlands and the US to identify
-                    recurring pain points, product topics and feature requests.
-
+                <p>
+                    Hochschule Schmalkalden
+                    <br>
+                    10/2023 — Present
                 </p>
-
-                <div class="tools">
-
-                    <span class="tool">Python</span>
-                    <span class="tool">YouTube Data API</span>
-                    <span class="tool">Claude API</span>
-                    <span class="tool">BERTopic</span>
-                    <span class="tool">Hugging Face</span>
-
-                </div>
-
-                <div class="project-result">
-
-                    <div class="result">
-                        <div class="result-number">7,500+</div>
-                        <div class="result-label">Public records</div>
-                    </div>
-
-                    <div class="result">
-                        <div class="result-number">4</div>
-                        <div class="result-label">Markets</div>
-                    </div>
-
-                    <div class="result">
-                        <div class="result-number">3</div>
-                        <div class="result-label">Languages</div>
-                    </div>
-
-                </div>
 
             </div>
 
 
-            <details>
-
-                <summary>
-                    View project details
-                </summary>
-
-                <div class="project-detail">
-
-                    <div class="detail-section">
-
-                        <h4>Business Problem</h4>
-
-                        <p>
-                            Consumer feedback is distributed across
-                            multilingual online channels and contains
-                            substantial noise. The objective is to structure
-                            this unstructured feedback into comparable
-                            consumer insights across markets.
-                        </p>
-
-                    </div>
-
-
-                    <div class="detail-section">
-
-                        <h4>Approach</h4>
-
-                        <ul>
-
-                            <li>
-                                Collected 7,500+ public YouTube records
-                                from 2023–2026.
-                            </li>
-
-                            <li>
-                                Applied deduplication, language detection,
-                                translation and relevance filtering.
-                            </li>
-
-                            <li>
-                                Used LLM-assisted processing to structure
-                                comments into pain points, praise and
-                                feature requests.
-                            </li>
-
-                            <li>
-                                Applied topic modelling and clustering
-                                to identify recurring consumer themes.
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-
-                    <div class="insight-box">
-
-                        <strong>Key focus:</strong>
-
-                        Building a transparent and auditable pipeline
-                        for converting multilingual unstructured consumer
-                        feedback into structured insights.
-
-                    </div>
-
-                </div>
-
-            </details>
-
-        </article>
-
-
-
-        <!-- PROJECT 02 -->
-
-        <article class="project-card">
-
-            <div class="project-top">
-
-                <div class="project-number">
-                    02
-                    <span class="status">COMPLETED</span>
-                </div>
+            <div class="education-card">
 
                 <h3>
-                    Customer Personality Segmentation
-                    & Marketing Analytics
-               
+                    B.A. International Business
+                </h3>
+
+                <p>
+                    Vietnam
+                    <br>
+                    10/2015 — 06/2019
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>
+                    MIT IDSS AI & Data Science Program
+                </h3>
+
+                <p>
+                    01/2026 — 05/2026
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>
+                    Languages
+                </h3>
+
+                <p>
+                    Vietnamese — Native
+                    <br>
+                    English — C1
+                    <br>
+                    German — B1
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact"
+         class="contact">
+
+    <div class="container">
+
+        <div class="section-label">
+            Contact
+        </div>
+
+        <h2>
+            Let's connect.
+        </h2>
+
+        <p>
+            Open to opportunities across Data Analytics,
+            Business Intelligence, Business Analysis,
+            Customer Analytics and consulting.
+        </p>
+
+
+        <div class="contact-links">
+
+            <a href="https://www.linkedin.com/in/nhuydao/"
+               target="_blank"
+               rel="noopener noreferrer">
+                LinkedIn
+            </a>
+
+            <a href="mailto:dao.y1997@gmail.com">
+                Email
+            </a>
+
+            <a href="#home">
+                Back to top ↑
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    © 2026 Dao Ngoc Nhu Y · Data Analytics & Business Intelligence
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+function toggleProject(button) {
+
+    const card = button.closest(".project-card");
+
+    card.classList.toggle("active");
+
+}
+
+</script>
+
+
+</body>
+</html>
+```
